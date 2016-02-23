@@ -1,0 +1,77 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+#wrap {
+	height: 100%;
+	width: 100%;
+}
+#wrap.bg {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index:-2;
+	background-image:url('../img/bg.jpg');
+	background-repeat: cover;
+}
+#wrap.bg:before {
+	content: " ";
+	
+}
+
+.flex-container {
+display: -webkit-flex;
+display: flex;
+}
+
+.flex-item {
+	margin: 10px;
+}
+.btn {
+	background-color:#9b6bcc;
+	border-color:#9b6bcc;
+	color:#000000 !important;
+}
+.btn-primary:hover {
+	background-color:#4d004d;
+	border-color:#9b6bcc;
+}
+.btn a{
+	color:white !important;
+}
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active
+{
+	background-color:white !important;
+	border-color:white;
+	color:white;
+}
+#topdiv {
+	padding-top:100px;
+	//padding-bottom:20px;
+}
+#middlediv {
+	padding-top:20px;
+}
+.container, .container-fluid
+{
+	background-color:white;
+	
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #9b6bdd;;
+}
