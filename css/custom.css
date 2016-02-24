@@ -1,19 +1,30 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans');
 #wrap {
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 }
-#wrap.bg {
-    position: absolute;
-	top: 0px;
-	left: 0px;
+.bg {
 	z-index:-2;
-	background-image:url('../img/bg.jpg');
-	background-repeat: cover;
+	background:transparent !important;
+	height:100%;
 }
-#wrap.bg:before {
-	content: " ";
-	
+
+.bg:after {
+	content: '';
+	position: absolute;
+	top: 0;
+    left: 0;
+	right:0;
+	bottom:0;
+	background:url('../img/bg.jpg');
+	background-size: cover;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	opacity:0.65;
+	z-index:-1;
 }
 
 .flex-container {
@@ -44,6 +55,7 @@ display: flex;
 	border-color:white;
 	color:white;
 }
+
 #topdiv {
 	padding-top:100px;
 	//padding-bottom:20px;
@@ -51,27 +63,28 @@ display: flex;
 #middlediv {
 	padding-top:20px;
 }
+
 .container, .container-fluid
 {
 	background-color:white;
+	padding:20px;
 	
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
+	margin-bottom: 60px;
+}*/
+/*.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #9b6bdd;;
-}
+  background-color: #9b6bdd;
+}*/
+
