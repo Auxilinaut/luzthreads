@@ -32,44 +32,47 @@
 			</ul>
 		</div>
 	</nav>
-	<div id="topdiv" class="container">
+	<div id="topdiv" class="container" style="margin-bottom:48px">
 		<div class="row">
 			<div class="col-md-6">
-				<center><img src="img/mascot.png" style="height:400px;overflow:visible;"/></center>
+				<center>
+					<img src="img/mascot.png" class="hidden-sm-down" style="height:400px;overflow:visible;margin-bottom:-156px;"/>
+					<img src="img/mascot.png" class="hidden-md-up" style="height:400px;overflow:visible;"/>
+				</center>
 			</div>
 			<div class="col-md-6">
 				<div class="container">
-					<div class="row" style="margin-bottom:50px">
-						<h1>Luz Threads</h1>
-						<h2>Crafts by Luz Camacho</h2>
+					<div class="row">
+						<h1>Welcome!</h1>
 					</div>
 					<div class="row">
-						<p><strong>Welcome to my website!</strong> I crochet handcrafted toys, dolls, and other things. If you want to get someone a cool gift, I can make one for you!</p>
-						<a href="Portfolio"><button type="button" class="btn btn-primary"><a href="Portfolio">Portfolio</a></button>
-						<button type="button" class="btn btn-primary"><a href="Contact">Contact</a></button>
+						<p>I crochet handcrafted toys, dolls, and other things. If you want to get someone a cool gift, I can make one for you!</p>
+						<button type="button" class="btn btn-primary"><a href="./About">About</a></button>
+						<button type="button" class="btn btn-primary"><a href="./Contact">Contact</a></button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="bottomdiv" class="parallaxbg">
-		<div class="container">
-			<div class="row">
-				<p>Testing!!!!!!!!!!!!
-				!!!!!!!!!!!!!!!!!!!!!!
-				!!!!!!!!!!!!!!!!!!!!!!
-				</p>
-			</div>
+	<div id="middlediv" class="parallaxbg parallaxbg-light">
+		<div class="parallaxbg-in">
+			<p>Check out my craft collection!</p>
+			<a href="Portfolio"><button type="button" class="btn btn-primary btn-lg"><a href="Portfolio">Portfolio</button></a>
 		</div>
 	</div>
-	<div id="middlediv" class="container">
-		<div class="row" style="margin-top:30px;">
+	<div id="bottomdiv" class="container">
+		<div class="row">
 			<div class="col-md-6">
-				<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LuzThreads" data-widget-id="702637749250211840">Tweets by @LuzThreads</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<h3>Work in Progress</h3>
+					<img src="img/harley.jpg" class="img-fluid" alt="Harley Quinn!"/>
+				<h3>Twitter</h3>
+					<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LuzThreads" data-widget-id="702637749250211840">Tweets by @LuzThreads</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
 			<div class="col-md-6">
-					<h3>Recent Projects</h3>
+				<h3>Instagram</h3>
+					<div id="instafeed" class="inline-block"></div>
+				<h3>Recent Projects</h3>
 					<div id="carsl" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#carsl" data-slide-to="0" class="active"></li>
@@ -108,17 +111,26 @@
 	<!--<script src="js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>-->
 	<script src="js/tether.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.parallax-1.1.3.js"></script>
+	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script type="text/javascript" src="js/instafeed.min.js"></script>
 	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#middlediv').parallax("50%", 0.4);
+			var feed = new Instafeed({
+			get: 'user',
+			userId: '2041333598',
+			clientId: 'f6245b3f500747e884f844f2108bb494',
+			accessToken: '2041333598.f6245b3.d07ed4dd11ef461abd6a31806cefe7dc',
+			template: '<a href="{{link}}"><img src="{{image}}"/></a>'
+			});
+			feed.run();
+		});
 		$('#yamodal').on('shown.bs.modal', function () {
 			$('#yainput').focus()
 		})	
 		$('.carousel').carousel()
-		$.fn.hasAttr = function(name) {
-			return this.attr(name) !== undefined;
-		};
-		jQuery(window).load(function() {
-			jQuery('.parallaxBg').parallax("50%", 0.2);
-		});
 	</script>
 </body>
 </html>
