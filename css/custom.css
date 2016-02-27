@@ -33,8 +33,8 @@ button:focus{
 }
 
 #topdiv {
-	padding-top:100px;
-	padding-bottom:20px;
+	padding-top:5em;
+	//padding-bottom:6em;
 }
 
 #topdiv img {
@@ -46,7 +46,7 @@ button:focus{
 }
 
 #bottomdiv h3{
-	padding-top:20px;
+	padding-top:0.5em;
 }
 
 .center-block {
@@ -64,13 +64,18 @@ button:focus{
 	max-width:400px;
 }
 
+.mascotprofile {
+	height:7.8em;
+	padding:1em 1em;
+}
+
 .navbar-toggler {
 	color: white;
 }
 
 .parallaxbg {
   color: #fff;
-  padding: 100px 0;
+  padding: 6em 0;
   position: relative;
   text-align: center;
   background: url(../img/2-2.jpg) 50% 0 repeat fixed;
