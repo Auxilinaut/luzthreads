@@ -64,15 +64,6 @@ button:focus{
 	max-width:400px;
 }
 
-.flex-container {
-display: -webkit-flex;
-display: flex;
-}
-
-.flex-item {
-	margin: 10px;
-}
-
 .navbar-toggler {
 	color: white;
 }
