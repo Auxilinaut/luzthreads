@@ -27,7 +27,7 @@ button:focus{
 .btn-primary:active,
 .btn-primary.active
 {
-	background-color:white !important;
+	background-color:purple !important;
 	border-color:white;
 	color:white;
 }
@@ -178,6 +178,11 @@ button:focus{
   .parallaxbg-light .parallaxbg-in small {
     font-weight: 200;
   }
+}
+@media (max-width: 34em) {
+	#topdiv {
+	padding-bottom:10em;
+	}
 }
 
 /* Sticky footer styles
