@@ -1,0 +1,9 @@
+<div class="container">
+	<div *ngFor="#craft of crafts" [class.selected]="craft === selectedCraft" (click)="goToDetail(craft.id)" class="projContainer">
+  		<div class="projInfoContainer">
+    		<h2 [innerHTML]="craft.name"></h2>
+    		<p class="projSpec" [innerHTML]="craft.type"></p>
+  		</div>
+  		<img src="{{craft.image6}}" />
+	</div>
+</div>

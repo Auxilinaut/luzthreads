@@ -1,0 +1,24 @@
+<div class="container">
+	<div *ngIf="craft">
+		<div class="row">
+			<div class="col-md-8">
+				<img src="{{craft.image1}}" class="img-fluid" style="max-height:700px;" (click)="goToDetail(craft.id+1)"/>
+			</div>
+			<div class="col-md-4" style="padding-top:3em;">
+				<h2>{{craft.name}}</h2>
+				<p [innerHTML]="craft.description"></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<img *ngIf="craft.image2!==''" src="{{craft.image2}}" class="img-fluid" style="max-height:700px;"/>
+			</div>
+			<div class="col-md-4">
+				<center>
+				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)"><</button>
+				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)">></button>
+				</center>
+			</div>
+		</div>
+	</div>
+</div>
