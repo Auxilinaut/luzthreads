@@ -18,7 +18,7 @@ export class CraftDetailComponent {
 		private _router: Router,
 		private _routeParams: RouteParams,
 		private _craftService: CraftService){}
-	
+		
 	ngOnInit() {
 		let id = +this._routeParams.get('id');
 		let previousid = id - 1;
@@ -32,8 +32,14 @@ export class CraftDetailComponent {
   		this._router.navigate(['Crafts']);
 	}
 	
-	goToDetail(idpass) {
-		this._router.navigate(['CraftDetail', { id: idpass }]);
+	goToDetail(idpass) { 
+		let id = +this._routeParams.get('id');
+		//check if next exists
+		if (!this.nextcraft && idpass>id){
+			//do nothing
+		}else{
+			this._router.navigate(['CraftDetail', { id: idpass }]);
+		}
 	}
 	
 	/*

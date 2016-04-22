@@ -1,10 +1,12 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
+import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
+import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'home',
+  directives: [ROUTER_DIRECTIVES, CAROUSEL_DIRECTIVES],
   templateUrl: 'home.component.html'
 })
 export class HomeComponent {
@@ -17,4 +19,9 @@ export class HomeComponent {
 		let link = ['CraftDetail', { id: craft.id }];
 		this._router.navigate(link);
 	}
+	/*
+	goToCrafts(){
+		let link = ['Crafts']
+		this._router.navigate(link);
+	}*/
 }

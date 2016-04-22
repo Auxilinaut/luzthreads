@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './craft.service', './home.component', './crafts.component', './craftdetail.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './craft.service', './home.component', './crafts.component', './craftdetail.component', './about.component', './contact.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './craft.service', './home.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, craft_service_1, home_component_1, crafts_component_1, craftdetail_component_1;
+    var core_1, router_1, craft_service_1, home_component_1, crafts_component_1, craftdetail_component_1, about_component_1, contact_component_1;
     var AppComponent;
     return {
         setters:[
@@ -31,6 +31,12 @@ System.register(['angular2/core', 'angular2/router', './craft.service', './home.
             },
             function (craftdetail_component_1_1) {
                 craftdetail_component_1 = craftdetail_component_1_1;
+            },
+            function (about_component_1_1) {
+                about_component_1 = about_component_1_1;
+            },
+            function (contact_component_1_1) {
+                contact_component_1 = contact_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -40,7 +46,7 @@ System.register(['angular2/core', 'angular2/router', './craft.service', './home.
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'luzthreads',
-                        template: "\n\t<nav class=\"navbar navbar-fixed-top navbar-dark\" style=\"background-color:#9b6bcc;\">\n\t\t<a class=\"navbar-brand\" [routerLink]=\"['Home']\">Luz Threads</a>\n\t\t<button class=\"navbar-toggler hidden-sm-up\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapser\">&#9776;</button>\n\t\t<div class=\"collapse navbar-toggleable-xs\" id=\"collapser\">\n\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" [routerLink]=\"['Home']\">Home</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" [routerLink]=\"['Crafts']\">Portfolio</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" href=\"#\">About</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\" href=\"#\">\n\t\t\t\t  <a class=\"nav-link hidden-xs-down\">Contact</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\t</nav>\n\t<div id=\"toppad\">\n\t\t<router-outlet></router-outlet>\n\t</div>\n    <footer class=\"footer\">\n\t\t<div class=\"container\">&copy; Luz Threads 2016</div>\n\t</footer>\n  ",
+                        template: "\n\t<nav class=\"navbar navbar-fixed-top navbar-dark\" style=\"background-color:#9b6bcc;\">\n\t\t<a class=\"navbar-brand\" [routerLink]=\"['Home']\">Luz Threads</a>\n\t\t<button class=\"navbar-toggler hidden-sm-up\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapser\">&#9776;</button>\n\t\t<div class=\"collapse navbar-toggleable-xs\" id=\"collapser\">\n\t\t\t<ul class=\"nav navbar-nav\">\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" [routerLink]=\"['Home']\">Home</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" [routerLink]=\"['Crafts']\">Portfolio</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link\" [routerLink]=\"['About']\">About</a>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t  <a class=\"nav-link hidden-xs-down\" [routerLink]=\"['Contact']\">Contact</a>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\t</nav>\n\t<div id=\"toppad\">\n\t\t<router-outlet></router-outlet>\n\t</div>\n    <footer class=\"footer\">\n\t\t<div class=\"container\">&copy; Luz Threads 2016</div>\n\t</footer>\n  ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS, craft_service_1.CraftService]
                     }),
@@ -60,6 +66,16 @@ System.register(['angular2/core', 'angular2/router', './craft.service', './home.
                             path: '/detail/:id',
                             name: 'CraftDetail',
                             component: craftdetail_component_1.CraftDetailComponent
+                        },
+                        {
+                            path: '/about',
+                            name: 'About',
+                            component: about_component_1.AboutComponent
+                        },
+                        {
+                            path: '/contact',
+                            name: 'Contact',
+                            component: contact_component_1.ContactComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

@@ -5,6 +5,8 @@ import { CraftService }     from './craft.service';
 import { HomeComponent } from './home.component';
 import { CraftsComponent } from './crafts.component';
 import { CraftDetailComponent } from './craftdetail.component';
+import { AboutComponent } from './about.component';
+import { ContactComponent } from './contact.component';
 import { Collapse, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
@@ -22,10 +24,10 @@ import { Collapse, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap
 				  <a class="nav-link" [routerLink]="['Crafts']">Portfolio</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link" href="#">About</a>
+				  <a class="nav-link" [routerLink]="['About']">About</a>
 				</li>
-				<li class="nav-item" href="#">
-				  <a class="nav-link hidden-xs-down">Contact</a>
+				<li class="nav-item">
+				  <a class="nav-link hidden-xs-down" [routerLink]="['Contact']">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -57,6 +59,16 @@ import { Collapse, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap
 		path: '/detail/:id',
 		name: 'CraftDetail',
 		component: CraftDetailComponent
+	},
+	{
+		path: '/about',
+		name: 'About',
+		component: AboutComponent
+	},
+	{
+		path: '/contact',
+		name: 'Contact',
+		component: ContactComponent
 	}
 ])
 

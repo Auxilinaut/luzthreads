@@ -45,7 +45,13 @@ System.register(['angular2/core', 'angular2/router', './craft.service'], functio
                     this._router.navigate(['Crafts']);
                 };
                 CraftDetailComponent.prototype.goToDetail = function (idpass) {
-                    this._router.navigate(['CraftDetail', { id: idpass }]);
+                    var id = +this._routeParams.get('id');
+                    //check if next exists
+                    if (!this.nextcraft && idpass > id) {
+                    }
+                    else {
+                        this._router.navigate(['CraftDetail', { id: idpass }]);
+                    }
                 };
                 CraftDetailComponent = __decorate([
                     core_1.Component({

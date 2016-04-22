@@ -11,6 +11,8 @@ button:focus{
 	outline-color:white;
 }
 
+.router-link-active { color: white !important; }
+
 a {
   color: #9b6bcc;
 }
@@ -59,10 +61,8 @@ a {
 	}
 }
 
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.imgdetail {
+  max-height:700px; 
 }
 
 .container, .container-fluid
@@ -194,22 +194,20 @@ a {
 .projContainer {
   display: inline-block;
   vertical-align: top;
-  margin-right: -5px;
   overflow: hidden;
   position: relative;
   vertical-align: top;
-  width: 340px;
-  height: 228px;
   cursor: pointer;
 }
 
-.projContainer h2 {
-  color: #fff;
+.projContainer h4 {
+  color: #fff !important;
   transition: 0.3s;
 }
 
 .projContainer img {
 transition: 0.3s;
+width:280px;
 }
 
 .projContainer:hover img {
@@ -217,7 +215,7 @@ transition: 0.3s;
  -webkit-transform: scale(1.2);
 }
 
-.projContainer:hover h2 {
+.projContainer:hover h4 {
     padding-top: 10%;
 }
 
@@ -231,6 +229,7 @@ transition: 0.3s;
   z-index: 3;
   opacity: 0;
   transition: 0.2s;
+  padding: .5em;
 }
 
 .projContainer:hover .projInfoContainer {

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './craft.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './craft.service', 'ng2-bootstrap/ng2-bootstrap'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './craft.service'], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, craft_service_1;
+    var core_1, router_1, craft_service_1, ng2_bootstrap_1;
     var HomeComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', './craft.service'], functio
             },
             function (craft_service_1_1) {
                 craft_service_1 = craft_service_1_1;
+            },
+            function (ng2_bootstrap_1_1) {
+                ng2_bootstrap_1 = ng2_bootstrap_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -41,6 +44,7 @@ System.register(['angular2/core', 'angular2/router', './craft.service'], functio
                 HomeComponent = __decorate([
                     core_1.Component({
                         selector: 'home',
+                        directives: [router_1.ROUTER_DIRECTIVES, ng2_bootstrap_1.CAROUSEL_DIRECTIVES],
                         templateUrl: 'home.component.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, craft_service_1.CraftService])

@@ -1,9 +1,11 @@
 <div class="container">
-	<div *ngFor="#craft of crafts" [class.selected]="craft === selectedCraft" (click)="goToDetail(craft.id)" class="projContainer">
+	<div class="row center-block">
+	<div *ngFor="#craft of crafts"  (click)="goToDetail(craft.id)" class="projContainer">
   		<div class="projInfoContainer">
-    		<h2 [innerHTML]="craft.name"></h2>
+    		<h4 [innerHTML]="craft.name"></h4>
     		<p class="projSpec" [innerHTML]="craft.type"></p>
   		</div>
-  		<img src="{{craft.image6}}" />
+  		<img src="{{craft.image6}}" class="img-fluid"/>
+	</div>
 	</div>
 </div>

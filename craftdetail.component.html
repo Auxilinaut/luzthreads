@@ -1,23 +1,30 @@
-<div class="container">
-	<div *ngIf="craft">
-		<div class="row">
-			<div class="col-md-8">
-				<img src="{{craft.image1}}" class="img-fluid" style="max-height:700px;" (click)="goToDetail(craft.id+1)"/>
-			</div>
-			<div class="col-md-4" style="padding-top:3em;">
-				<h2>{{craft.name}}</h2>
-				<p [innerHTML]="craft.description"></p>
-			</div>
+<div *ngIf="craft" class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<h2>{{craft.name}}</h2>
+			<h5>{{craft.type}}</h5>
+			<p [innerHTML]="craft.description"></p>
 		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<img *ngIf="craft.image2!==''" src="{{craft.image2}}" class="img-fluid" style="max-height:700px;"/>
-			</div>
-			<div class="col-md-4">
-				<center>
+	</div>
+	<div class="row">
+		<div *ngIf="craft.image2!==''" class="col-sm-6">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid text-xs-center" (click)="goToDetail(craft.id+1)"/>
+		</div>
+		<div *ngIf="craft.image2!==''" class="col-sm-6">
+			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid text-xs-center" (click)="goToDetail(craft.id+1)"/>
+		</div>
+		<div *ngIf="craft.image2===''" class="col-xs-12">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id+1)"/>
+		</div>
+	</div>
+	<div class="row" style="padding-top:1em;">
+		<div class="col-xs-6">
+			<a href="" class="pull-xs-right">Request a craft like this!</a>
+		</div>
+		<div class="col-xs-6">
+			<div class="pull-xs-left">
 				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)"><</button>
 				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)">></button>
-				</center>
 			</div>
 		</div>
 	</div>
