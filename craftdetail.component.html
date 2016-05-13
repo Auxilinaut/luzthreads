@@ -1,8 +1,7 @@
 <div *ngIf="craft" class="container">
-	<div class="row">
+	<div class="row titlerow">
 		<div class="col-sm-6">
-			<h2>{{craft.name}}</h2>
-			<h5>{{craft.type}}</h5>
+			<h1>{{craft.name}}</h1>
 			<p [innerHTML]="craft.description"></p>
 		</div>
 	</div>
@@ -18,14 +17,10 @@
 		</div>
 	</div>
 	<div class="row" style="padding-top:1em;">
-		<div class="col-xs-6">
-			<a href="" class="pull-xs-right">Request a craft like this!</a>
-		</div>
-		<div class="col-xs-6">
-			<div class="pull-xs-left">
+			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
+				<center>
 				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)"><</button>
 				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)">></button>
-			</div>
-		</div>
+				</center>
 	</div>
 </div>

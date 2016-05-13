@@ -2,7 +2,7 @@ import {Craft} from './craft';
 
 export var CRAFTS: Craft[] = [
 	{
-		"id": 1, "name": "Ezio Sackboy", "type": "Amigurumi", "description": "Modified Assassin's Creed Sackboy from <a href=\"http://goldenjellybean.com/youtube/about/ezio-sackboy/\">Golden Jellybean's pattern.</a>", "price": 0, "stock": 0, 
+		"id": 1, "name": "Ezio Sackboy", "type": "Amigurumi", "description": "Modified Assassin's Creed Sackboy from <a href=\"http://goldenjellybean.com/youtube/about/ezio-sackboy/\">Golden Jellybean's pattern.</a>", "stock": 0, 
 		"forsale": false, "onsale": false, "image1":"/img/assassin.jpg", "image2":"", "image3":"", "image4":"", "image5":"", "image6":"/img/resized/assassin.jpg"
 	},
 	{

@@ -40,7 +40,11 @@ a {
 }
 
 #toppad {
-	padding-top:5em;
+	padding-top:3.6em;
+}
+
+#topdiv {
+  padding-top:2em;
 }
 
 #topdiv img {
@@ -52,26 +56,31 @@ a {
 	padding-top:0.5em;
 }
 
-@media (max-width: 28em) {
+@media (max-width: 48em) {
 	#topdiv {
-	margin-bottom:8em;
+	margin-bottom:1em;
 	}
 	#middlediv {
-	margin-top:4em;
+	margin-top:1em;
 	}
+}
+
+.titlerow {
+  padding-top:1em;
+  padding-bottom:1em;
+}
+
+.footer {
+  margin-top:4em;
 }
 
 .imgdetail {
   max-height:700px; 
 }
 
-.container, .container-fluid
-{
-	padding:20px;
-	
-}
 .carousel {
 	max-width:400px;
+  cursor: pointer;
 }
 
 .mascotprofile {

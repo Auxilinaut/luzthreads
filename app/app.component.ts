@@ -1,13 +1,13 @@
-import { Component }       from 'angular2/core';
-import { CORE_DIRECTIVES } from 'angular2/common';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component }       from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { CraftService }     from './craft.service';
 import { HomeComponent } from './home.component';
 import { CraftsComponent } from './crafts.component';
 import { CraftDetailComponent } from './craftdetail.component';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
-import { Collapse, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
+import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'luzthreads',

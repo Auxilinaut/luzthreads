@@ -3,7 +3,7 @@ export interface Craft {
   name: string;
   type: string;
   description: string;
-  price: number;
+  price?: number;
   stock: number;
   forsale: boolean;
   onsale: boolean;

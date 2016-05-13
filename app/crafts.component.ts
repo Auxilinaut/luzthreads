@@ -1,5 +1,5 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router-deprecated';
 import {Craft} from './craft';
 import {CraftDetailComponent} from './craftdetail.component';
 import {CraftService} from './craft.service';
@@ -17,7 +17,7 @@ export class CraftsComponent implements OnInit{
 	constructor(private _router: Router, private _craftService: CraftService) {}
 	
 	getCrafts(){
-		this._craftService.getCrafts().then(crafts => this.crafts = crafts);
+		this._craftService.getCrafts().then(crafts => this.crafts = crafts.reverse());
 	}
 	
 	ngOnInit(){

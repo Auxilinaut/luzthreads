@@ -1,45 +1,30 @@
 <html>
   <head>
-	<base href="/">
+    <base href="/">
     <title>Luz Threads</title>
-	
-	<meta charset="utf-8">
+    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	
-	<link rel="stylesheet" href="css/tether.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/custom.css">
-	<link rel="icon" href="favicon.ico" type="image/ico" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/tether.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="icon" href="favicon.ico" type="image/ico" />
 
     <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
+      <!-- Old Browser Polyfills -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>  
-    
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-	  <script src="node_modules/angular2/bundles/router.dev.js"></script>
    
 	
     <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
     <script>
-      System.config({
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        },
-		map: {
-			moment: 'node_modules/moment/moment.js'
-		}
-      });
-      System.import('app/main')
-            .then(null, console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
 
