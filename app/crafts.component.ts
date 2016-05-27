@@ -17,7 +17,7 @@ export class CraftsComponent implements OnInit{
 	constructor(private _router: Router, private _craftService: CraftService) {}
 	
 	getCrafts(){
-		this._craftService.getCrafts().then(crafts => this.crafts = crafts.reverse());
+		this._craftService.getCrafts().then(cs => this.crafts = cs.slice().reverse());
 	}
 	
 	ngOnInit(){

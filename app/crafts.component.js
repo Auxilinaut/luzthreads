@@ -19,7 +19,7 @@ var CraftsComponent = (function () {
     }
     CraftsComponent.prototype.getCrafts = function () {
         var _this = this;
-        this._craftService.getCrafts().then(function (crafts) { return _this.crafts = crafts.reverse(); });
+        this._craftService.getCrafts().then(function (cs) { return _this.crafts = cs.slice().reverse(); });
     };
     CraftsComponent.prototype.ngOnInit = function () {
         this.getCrafts();

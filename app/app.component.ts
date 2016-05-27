@@ -35,9 +35,12 @@ import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-
 	<div id="toppad">
 		<router-outlet></router-outlet>
 	</div>
-    <footer class="footer">
-		<div class="container">&copy; Luz Threads 2016</div>
-	</footer>
+		<div class="container">
+		<div class="row">
+    <footer class="footer">&copy; Luz Threads 2016</footer>
+		</div>
+		</div>
+		
   `,
   directives: [ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS, CraftService]

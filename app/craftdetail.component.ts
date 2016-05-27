@@ -34,9 +34,13 @@ export class CraftDetailComponent {
 	
 	goToDetail(idpass) { 
 		let id = +this._routeParams.get('id');
-		//check if next exists
-		if (!this.nextcraft && idpass>id){
-			//do nothing
+		//check if next exists, backwards
+		if (idpass<id){
+			if (!this.previouscraft || this.previouscraft.wip){
+				//do nothing
+			}else{
+				this._router.navigate(['CraftDetail', { id: idpass }]);
+			}
 		}else{
 			this._router.navigate(['CraftDetail', { id: idpass }]);
 		}

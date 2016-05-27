@@ -33,8 +33,13 @@ var CraftDetailComponent = (function () {
     };
     CraftDetailComponent.prototype.goToDetail = function (idpass) {
         var id = +this._routeParams.get('id');
-        //check if next exists
-        if (!this.nextcraft && idpass > id) {
+        //check if next exists, backwards
+        if (idpass < id) {
+            if (!this.previouscraft || this.previouscraft.wip) {
+            }
+            else {
+                this._router.navigate(['CraftDetail', { id: idpass }]);
+            }
         }
         else {
             this._router.navigate(['CraftDetail', { id: idpass }]);

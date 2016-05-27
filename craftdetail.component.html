@@ -1,26 +1,32 @@
 <div *ngIf="craft" class="container">
 	<div class="row titlerow">
-		<div class="col-sm-6">
-			<h1>{{craft.name}}</h1>
+		<h1>{{craft.name}}</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-8">
 			<p [innerHTML]="craft.description"></p>
+		</div>
+		<div class="col-xs-4" style="padding-bottom:1em;">
+			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
+			<span class="pull-xs-right">
+				<button class="btn" *ngIf="nextcraft && !nextcraft.wip" (click)="goToDetail(craft.id+1)"><</button>
+				<button class="btn" *ngIf="previouscraft && !previouscraft.wip" (click)="goToDetail(craft.id-1)">></button>
+			</span>
 		</div>
 	</div>
 	<div class="row">
-		<div *ngIf="craft.image2!==''" class="col-sm-6">
-			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid text-xs-center" (click)="goToDetail(craft.id+1)"/>
+		<div *ngIf="craft.image2" class="col-sm-6">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid pull-xs-right" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="craft.image2!==''" class="col-sm-6">
-			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid text-xs-center" (click)="goToDetail(craft.id+1)"/>
+		<div *ngIf="craft.image2" class="col-sm-6">
+			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid pull-xs-left" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="craft.image2===''" class="col-xs-12">
-			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id+1)"/>
+		<div *ngIf="!craft.image2" class="col-xs-12">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
 	</div>
-	<div class="row" style="padding-top:1em;">
-			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
-				<center>
-				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)"><</button>
-				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)">></button>
-				</center>
+	<div class="row" style="padding:1em;">
+	<a (click)="goToCrafts()">Back to portfolio</a>
 	</div>
+	
 </div>

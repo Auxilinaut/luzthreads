@@ -4,13 +4,14 @@ export interface Craft {
   type: string;
   description: string;
   price?: number;
-  stock: number;
-  forsale: boolean;
-  onsale: boolean;
+  stock?: number;
+  forsale?: boolean;
+  onsale?: boolean;
+  wip?: boolean;
   image1: string;
-  image2: string;
-  image3: string;
-  image4: string;
-  image5: string;
+  image2?: string;
+  image3?: string;
+  image4?: string;
+  image5?: string;
   image6: string;
 }
