@@ -9,20 +9,26 @@
 		<div class="col-xs-4" style="padding-bottom:1em;">
 			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
 			<span class="pull-xs-right">
-				<button class="btn" *ngIf="nextcraft && !nextcraft.wip" (click)="goToDetail(craft.id+1)"><</button>
-				<button class="btn" *ngIf="previouscraft && !previouscraft.wip" (click)="goToDetail(craft.id-1)">></button>
+				<button class="btn" *ngIf="nextcraft && !nextcraft.wip && !craft.wip" (click)="goToDetail(craft.id+1)"><</button>
+				<button class="btn" *ngIf="previouscraft && !previouscraft.wip && !craft.wip" (click)="goToDetail(craft.id-1)">></button>
 			</span>
 		</div>
 	</div>
 	<div class="row">
 		<div *ngIf="craft.image2" class="col-sm-6">
-			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid pull-xs-right" (click)="goToDetail(craft.id-1)"/>
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
 		<div *ngIf="craft.image2" class="col-sm-6">
-			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid pull-xs-left" (click)="goToDetail(craft.id-1)"/>
+			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
 		<div *ngIf="!craft.image2" class="col-xs-12">
 			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+		</div>
+		<div *ngIf="craft.image3" class="col-sm-6">
+			<img src="{{craft.image3}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+		</div>
+		<div *ngIf="craft.image4" class="col-sm-6">
+			<img src="{{craft.image4}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
 	</div>
 	<div class="row" style="padding:1em;">

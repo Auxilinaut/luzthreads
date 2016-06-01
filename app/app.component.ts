@@ -7,15 +7,15 @@ import { CraftsComponent } from './crafts.component';
 import { CraftDetailComponent } from './craftdetail.component';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
-import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
+import { CollapseDirective, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'luzthreads',
   template: `
-	<nav class="navbar navbar-fixed-top navbar-dark" style="background-color:#9b6bcc;">
+	<nav class="navbar navbar-fixed-top navbar-dark">
 		<a class="navbar-brand" [routerLink]="['Home']">Luz Threads</a>
-		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapser">&#9776;</button>
-		<div class="collapse navbar-toggleable-xs" id="collapser">
+		<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" (click)="isCollapsed = !isCollapsed">&#9776;</button>
+		<div class="collapse navbar-toggleable-xs pull-xs-left" [collapse]="isCollapsed">
 			<ul class="nav navbar-nav">
 				<li class="nav-item">
 				  <a class="nav-link" [routerLink]="['Home']">Home</a>
@@ -27,7 +27,7 @@ import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-
 				  <a class="nav-link" [routerLink]="['About']">About</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link hidden-xs-down" [routerLink]="['Contact']">Contact</a>
+				  <a class="nav-link" [routerLink]="['Contact']">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -37,12 +37,12 @@ import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-
 	</div>
 		<div class="container">
 		<div class="row">
-    <footer class="footer">&copy; Luz Threads 2016</footer>
+    <footer class="footer">&copy; Luz Threads 2016 - <a href="mailto:Luz@LuzThreads.com">Luz@LuzThreads.com</a></footer>
 		</div>
 		</div>
 		
   `,
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, CollapseDirective],
   providers: [ROUTER_PROVIDERS, CraftService]
 })
 
@@ -77,4 +77,5 @@ import { CollapseDirective, DROPDOWN_DIRECTIVES, Ng2BootstrapConfig } from 'ng2-
 
 export class AppComponent {
   title = 'Luz Threads';
+	public isCollapsed:boolean = true;
 }

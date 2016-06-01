@@ -11,8 +11,7 @@ export class CraftDetailComponent {
 	craft: Craft;
 	previouscraft: Craft;
 	nextcraft: Craft;
-	public display2: Boolean = false;
-	public display3: Boolean = false;
+	
 	
 	constructor(
 		private _router: Router,

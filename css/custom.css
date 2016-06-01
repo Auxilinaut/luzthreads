@@ -22,6 +22,7 @@ a {
 	background-color:#9b6bcc;
 	border-color:#9b6bcc;
 	color:white !important;
+  outline-color: white !important;
 }
 .btn-primary:hover {
 	background-color:#4d004d;
@@ -38,6 +39,10 @@ a {
 	background-color:purple !important;
 	border-color:white;
 	color:white;
+}
+
+.navbar-dark {
+  background-color:#9b6bcc;
 }
 
 #toppad {
@@ -76,7 +81,7 @@ a {
 }
 
 .imgdetail {
-  max-height:700px; 
+    max-height:90vh;
 }
 
 .carousel {
@@ -87,6 +92,10 @@ a {
 .mascotprofile {
 	height:7.8em;
 	padding:1em 1em;
+}
+
+.profile {
+  width:400px;
 }
 
 .navbar-toggler {
@@ -206,8 +215,9 @@ a {
   vertical-align: top;
   overflow: hidden;
   position: relative;
-  vertical-align: top;
   cursor: pointer;
+  margin-left:auto;
+  margin-right:auto
 }
 
 .projContainer h4 {
@@ -217,7 +227,7 @@ a {
 
 .projContainer img {
 transition: 0.3s;
-width:250px;
+max-width:15em;
 }
 
 .projContainer:hover img {
@@ -252,6 +262,6 @@ width:250px;
 }
 
 .projSpec {
- color: #aaa;
+ /*color: #aaa;*/
  font-family: sans-serif;
 }

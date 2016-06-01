@@ -1,168 +1,177 @@
-"use strict";
-exports.CRAFTS = [
-    {
-        "id": 0, "name": "WIP", "type": "Amigurumi", "description": "Work in Progress",
-        "image1": "", "image6": "", "wip": true
-    },
-    {
-        "id": 1, "name": "Boy Teddy", "type": "Amigurumi", "description": "Stuffed Bear: Amigurumi Edition.",
-        "image1": "/img/crochetbear.jpg", "image6": "/img/resized/crochetbear.jpg"
-    },
-    {
-        "id": 2, "name": "Batman", "type": "Amigurumi", "description": "Now it's time to crochet a batmobile.",
-        "image1": "/img/batman.jpg", "image2": "/img/batman2.jpg", "image6": "/img/resized/batman.jpg"
-    },
-    {
-        "id": 3, "name": "Zombie", "type": "Amigurumi", "description": "Custom zombie, complete with brains and blood for the most haunting experience.",
-        "image1": "/img/zombie.jpg", "image6": "/img/resized/zombie.jpg"
-    },
-    {
-        "id": 4, "name": "Hat", "type": "Amigurumi", "description": "One hat of many.",
-        "image1": "/img/hat.jpg", "image6": "/img/resized/hat.jpg"
-    },
-    {
-        "id": 5, "name": "Slouch Hat", "type": "Amigurumi", "description": "It's a hat that slouches.",
-        "image1": "/img/slouchhat.jpg", "image2": "/img/slouchhat2.jpg", "image6": "/img/resized/slouchhat.jpg"
-    },
-    {
-        "id": 6, "name": "FSU Hat", "type": "Amigurumi", "description": "Hats with FSU colors, ear warmers, and pompoms.",
-        "image1": "/img/teamhat.jpg", "image6": "/img/resized/teamhat.jpg"
-    },
-    {
-        "id": 7, "name": "Zombie Hat", "type": "Amigurumi", "description": "This could be your entire Halloween costume and you'd <i>still</i> get candy.",
-        "image1": "/img/zombiehat.jpg", "image6": "/img/resized/zombiehat.jpg"
-    },
-    {
-        "id": 8, "name": "Blue Turtle", "type": "Amigurumi", "description": "Turtles aren't actually slow. The rest of the world is just too fast.",
-        "image1": "/img/turtle.jpg", "image6": "/img/resized/turtle.jpg"
-    },
-    {
-        "id": 9, "name": "Iron Man Sackboy", "type": "Amigurumi", "description": "Sort of a Sackboy in an Iron Man suit. Inspired by a <a href=\"http://goldenjellybean.com\">Golden Jellybean</a> pattern.",
-        "image1": "/img/ironman.jpg", "image6": "/img/resized/ironman.jpg"
-    },
-    {
-        "id": 10, "name": "Sackboy", "type": "Amigurumi", "description": "That one guy from Little Big Planet.",
-        "image1": "/img/sackboy.jpg", "image6": "/img/resized/sackboy.jpg"
-    },
-    {
-        "id": 11, "name": "Ezio Sackboy", "type": "Amigurumi", "description": "Modified Assassin's Creed Sackboy from <a href=\"http://goldenjellybean.com/youtube/about/ezio-sackboy/\">Golden Jellybean's pattern.</a>",
-        "image1": "/img/assassin.jpg", "image6": "/img/resized/assassin.jpg"
-    },
-    {
-        "id": 12, "name": "Marill", "type": "Amigurumi", "description": "One of my favorite Pokemon. Isn't it adorable? My version of <a href=\"http://nanettecrochet.blogspot.com/2011/07/marill-pattern.html\">Nanette Crochet's pattern.</a>",
-        "image1": "/img/marill.jpg", "image2": "/img/marill2.jpg", "image6": "/img/resized/marill.jpg"
-    },
-    {
-        "id": 13, "name": "Hatsune Miku", "type": "Amigurumi", "description": "The hair is the best part. If you believe, it also does the dance moves.",
-        "image1": "/img/miku.jpg", "image6": "/img/resized/miku.jpg"
-    },
-    {
-        "id": 14, "name": "Baby Pikachu", "type": "Amigurumi", "description": "Chibi Pikachu on his belly. My version of <a href=\"http://aphid777.deviantart.com/art/Baby-Pikachu-with-pattern-431086950\">aphid777's pattern.</a>",
-        "image1": "/img/pikachu.jpg", "image2": "/img/pikachu2.jpg", "image6": "/img/resized/pikachu.jpg"
-    },
-    {
-        "id": 15, "name": "Minion Hat", "type": "Amigurumi", "description": "Probably my favorite hat so far.",
-        "image1": "/img/minionhat.jpg", "image2": "/img/minionhat2.jpg", "image6": "/img/resized/minionhat.jpg"
-    },
-    {
-        "id": 16, "name": "My Little Totoro", "type": "Amigurumi", "description": "Totoro from the anime movie My Little Totoro.",
-        "image1": "/img/totoro.jpg", "image6": "/img/resized/totoro.jpg"
-    },
-    {
-        "id": 17, "name": "Bunny", "type": "Amigurumi", "description": "The cutest bunny amigurumi I've made yet!",
-        "image1": "/img/bunny.jpg", "image6": "/img/resized/bunny.jpg"
-    },
-    {
-        "id": 18, "name": "Captain America", "type": "Amigurumi", "description": "Captain America: The First Avenger - Amigurumi Edition.",
-        "image1": "/img/captain.jpg", "image6": "/img/resized/captain.jpg"
-    },
-    {
-        "id": 19, "name": "Patriots Scarf", "type": "Accessory", "description": "My favorite football team's logo on a scarf.",
-        "image1": "/img/patriotsscarf.jpg", "image6": "/img/resized/patriotsscarf.jpg"
-    },
-    {
-        "id": 20, "name": "Teddy Polar Bear", "type": "Amigurumi", "description": "Made this pattern myself! Polar bears are one of my favorite types of bear.",
-        "image1": "/img/teddypolarbear.jpg", "image6": "/img/resized/teddypolarbear.jpg"
-    },
-    {
-        "id": 21, "name": "Ugly Dolls", "type": "Amigurumi", "description": "A bunch of Ugly Dolls in various shapes and colors.",
-        "image1": "/img/uglydolls.jpg", "image6": "/img/resized/uglydolls.jpg"
-    },
-    {
-        "id": 22, "name": "The Flash", "type": "Amigurumi", "description": "He runs so fast, it took negative time to crochet.",
-        "image1": "/img/flash.jpg", "image6": "/img/resized/flash.jpg"
-    },
-    {
-        "id": 23, "name": "Santa Outfit", "type": "Baby", "description": "Merry Christmas, Santa Jr.",
-        "image1": "/img/santa.jpg", "image2": "/img/santa2.jpg", "image6": "/img/resized/santa.jpg"
-    },
-    {
-        "id": 24, "name": "BB-8", "type": "Amigurumi", "description": "The droid we were looking for in Star Wars Episode 7.",
-        "image1": "/img/bb8.jpg", "image2": "/img/bb82.jpg", "image6": "/img/resized/bb8.jpg"
-    },
-    {
-        "id": 25, "name": "Harley Quinn", "type": "Amigurumi", "description": "Complete with a mallet, ready for evil shenanigans.",
-        "image1": "/img/harleyquinn.jpg", "image2": "/img/harleyquinn2.jpg", "image3": "/img/harleyquinn3.jpg", "image6": "/img/resized/harleyquinn.jpg"
-    },
-    {
-        "id": 26, "name": "Teddy Panda Bear", "type": "Amigurumi", "description": "One of the more satisfying bears I've made yet.",
-        "image1": "/img/pandabear.jpg", "image6": "/img/resized/pandabear.jpg"
-    },
-    {
-        "id": 27, "name": "Olaf", "type": "Amigurumi", "description": "That snow guy from Frozen.",
-        "image1": "/img/olaf.jpg", "image6": "/img/resized/olaf.jpg"
-    },
-    {
-        "id": 28, "name": "Mini Doll", "type": "Amigurumi", "description": "Originally meant to be a fairy, with a possible wing addition in the near future.",
-        "image1": "/img/minidoll.jpg", "image2": "/img/minidoll2.jpg", "image6": "/img/resized/minidoll.jpg"
-    },
-    {
-        "id": 29, "name": "Purple Bear", "type": "Amigurumi", "description": "This bear was a baby shower gift, done in a nice shade of purple. Comes with baby booties!",
-        "image1": "/img/purplebear.jpg", "image2": "/img/purplebear2.jpg", "image6": "/img/resized/purplebear.jpg"
-    },
-    {
-        "id": 30, "name": "Wonder Woman Minion", "type": "Amigurumi", "description": "Why not put a minion in a Wonder Woman costume?",
-        "image1": "/img/wonderwomanminion.jpg", "image6": "/img/resized/wonderwomanminion.jpg"
-    },
-    {
-        "id": 31, "name": "Batman Minion", "type": "Amigurumi", "description": "Why not put a minion in a Batman costume?",
-        "image1": "/img/batmanminion.jpg", "image2": "/img/batmanminion2.jpg", "image6": "/img/resized/batmanminion.jpg"
-    },
-    {
-        "id": 32, "name": "Minion", "type": "Amigurumi", "description": "The smirk is the best part. Something's about to go down.",
-        "image1": "/img/minion.jpg", "image2": "/img/minion2.jpg", "image6": "/img/resized/minion.jpg"
-    },
-    {
-        "id": 33, "name": "Ezio", "type": "Amigurumi", "description": "Regular Ezio from Assassin's Creed with all the necessary details.",
-        "image1": "/img/eziowhite.jpg", "image6": "/img/resized/eziowhite.jpg"
-    },
-    {
-        "id": 34, "name": "Snow White", "type": "Amigurumi", "description": "She looks pretty! They should make a movie about her.",
-        "image1": "/img/snowwhite.jpg", "image6": "/img/resized/snowwhite.jpg"
-    },
-    {
-        "id": 35, "name": "Deadpool", "type": "Amigurumi", "description": "One step closer in my journey to make all the Marvel superheroes.",
-        "image1": "/img/deadpool.jpg", "image2": "/img/deadpool2.jpg", "image6": "/img/resized/deadpool.jpg"
-    },
-    {
-        "id": 36, "name": "Hello Kitty", "type": "Amigurumi", "description": "A classic character from Japan, too cute not too crochet.",
-        "image1": "/img/hellokitty.jpg", "image6": "/img/resized/hellokitty.jpg"
-    },
-    {
-        "id": 37, "name": "Luz Threads Mascot", "type": "Amigurumi", "description": "ME in amigurumi form! Expect to see more of her in the future in various outfits.",
-        "image1": "/img/mascot.jpg", "image2": "/img/mascot2.jpg", "image3": "/img/mascot3.jpg", "image6": "/img/resized/mascot.jpg"
-    },
-    {
-        "id": 38, "name": "Snoopy", "type": "Amigurumi", "description": "The Peanuts dog complete with Woodstock!",
-        "image1": "/img/snoopy.jpg", "image2": "/img/snoopywoodstock.jpg", "image3": "/img/woodstock.jpg", "image6": "/img/resized/snoopy.jpg"
-    },
-    {
-        "id": 39, "name": "Pink Bunny", "type": "Amigurumi", "description": "In my favorite shade of pink, an adorable bunny done just right the first time, no redos.",
-        "image1": "/img/pinkbunny.jpg", "image2": "/img/pinkbunny2.jpg", "image6": "/img/resized/pinkbunny.jpg"
-    },
-    {
-        "id": 40, "name": "Spyro", "type": "Amigurumi", "description": "The dragon we all grew up with in the PS1 era, after toasting a few sheep.",
-        "image1": "/img/spyro.jpg", "image2": "/img/spyro2.jpg", "image6": "/img/resized/spyro.jpg"
+System.register([], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var CRAFTS;
+    return {
+        setters:[],
+        execute: function() {
+            exports_1("CRAFTS", CRAFTS = [
+                {
+                    "id": 0, "name": "Rainbow Dash", "type": "Amigurumi", "description": "Work in Progress: My Little Pony!",
+                    "image1": "/img/wip.jpg", "image6": "/img/resized/wip.jpg", "wip": true
+                },
+                {
+                    "id": 1, "name": "Boy Teddy", "type": "Amigurumi", "description": "Stuffed Bear: Amigurumi Edition.",
+                    "image1": "/img/crochetbear.jpg", "image6": "/img/resized/crochetbear.jpg"
+                },
+                {
+                    "id": 2, "name": "Batman", "type": "Amigurumi", "description": "Now it's time to crochet a batmobile.",
+                    "image1": "/img/batman.jpg", "image2": "/img/batman2.jpg", "image6": "/img/resized/batman.jpg"
+                },
+                {
+                    "id": 3, "name": "Zombie", "type": "Amigurumi", "description": "Custom zombie, complete with brains and blood for the most haunting experience.",
+                    "image1": "/img/zombie.jpg", "image6": "/img/resized/zombie.jpg"
+                },
+                {
+                    "id": 4, "name": "Hat", "type": "Amigurumi", "description": "One hat of many.",
+                    "image1": "/img/hat.jpg", "image6": "/img/resized/hat.jpg"
+                },
+                {
+                    "id": 5, "name": "Slouch Hat", "type": "Amigurumi", "description": "It's a hat that slouches.",
+                    "image1": "/img/slouchhat.jpg", "image2": "/img/slouchhat2.jpg", "image6": "/img/resized/slouchhat.jpg"
+                },
+                {
+                    "id": 6, "name": "FSU Hat", "type": "Amigurumi", "description": "Hats with FSU colors, ear warmers, and pompoms.",
+                    "image1": "/img/teamhat.jpg", "image6": "/img/resized/teamhat.jpg"
+                },
+                {
+                    "id": 7, "name": "Zombie Hat", "type": "Amigurumi", "description": "This could be your entire Halloween costume and you'd <i>still</i> get candy.",
+                    "image1": "/img/zombiehat.jpg", "image6": "/img/resized/zombiehat.jpg"
+                },
+                {
+                    "id": 8, "name": "Blue Turtle", "type": "Amigurumi", "description": "Turtles aren't actually slow. The rest of the world is just too fast.",
+                    "image1": "/img/turtle.jpg", "image6": "/img/resized/turtle.jpg"
+                },
+                {
+                    "id": 9, "name": "Iron Man Sackboy", "type": "Amigurumi", "description": "Sort of a Sackboy in an Iron Man suit. Inspired by a <a href=\"http://goldenjellybean.com\">Golden Jellybean</a> pattern.",
+                    "image1": "/img/ironman.jpg", "image6": "/img/resized/ironman.jpg"
+                },
+                {
+                    "id": 10, "name": "Sackboy", "type": "Amigurumi", "description": "That one guy from Little Big Planet.",
+                    "image1": "/img/sackboy.jpg", "image6": "/img/resized/sackboy.jpg"
+                },
+                {
+                    "id": 11, "name": "Ezio Sackboy", "type": "Amigurumi", "description": "Modified Assassin's Creed Sackboy from <a href=\"http://goldenjellybean.com/youtube/about/ezio-sackboy/\">Golden Jellybean's pattern.</a>",
+                    "image1": "/img/assassin.jpg", "image6": "/img/resized/assassin.jpg"
+                },
+                {
+                    "id": 12, "name": "Marill", "type": "Amigurumi", "description": "One of my favorite Pokemon. Isn't it adorable? My version of <a href=\"http://nanettecrochet.blogspot.com/2011/07/marill-pattern.html\">Nanette Crochet's pattern.</a>",
+                    "image1": "/img/marill.jpg", "image2": "/img/marill2.jpg", "image6": "/img/resized/marill.jpg"
+                },
+                {
+                    "id": 13, "name": "Hatsune Miku", "type": "Amigurumi", "description": "The hair is the best part. If you believe, it also does the dance moves.",
+                    "image1": "/img/miku.jpg", "image6": "/img/resized/miku.jpg"
+                },
+                {
+                    "id": 14, "name": "Baby Pikachu", "type": "Amigurumi", "description": "Chibi Pikachu on his belly. My version of <a href=\"http://aphid777.deviantart.com/art/Baby-Pikachu-with-pattern-431086950\">aphid777's pattern.</a>",
+                    "image1": "/img/pikachu.jpg", "image2": "/img/pikachu2.jpg", "image6": "/img/resized/pikachu.jpg"
+                },
+                {
+                    "id": 15, "name": "Minion Hat", "type": "Amigurumi", "description": "Probably my favorite hat so far.",
+                    "image1": "/img/minionhat.jpg", "image2": "/img/minionhat2.jpg", "image6": "/img/resized/minionhat.jpg"
+                },
+                {
+                    "id": 16, "name": "My Little Totoro", "type": "Amigurumi", "description": "Totoro from the anime movie My Little Totoro.",
+                    "image1": "/img/totoro.jpg", "image6": "/img/resized/totoro.jpg"
+                },
+                {
+                    "id": 17, "name": "Bunny", "type": "Amigurumi", "description": "The cutest bunny amigurumi I've made yet!",
+                    "image1": "/img/bunny.jpg", "image6": "/img/resized/bunny.jpg"
+                },
+                {
+                    "id": 18, "name": "Captain America", "type": "Amigurumi", "description": "Captain America: The First Avenger - Amigurumi Edition.",
+                    "image1": "/img/captain.jpg", "image6": "/img/resized/captain.jpg"
+                },
+                {
+                    "id": 19, "name": "Patriots Scarf", "type": "Accessory", "description": "My favorite football team's logo on a scarf.",
+                    "image1": "/img/patriotsscarf.jpg", "image6": "/img/resized/patriotsscarf.jpg"
+                },
+                {
+                    "id": 20, "name": "Teddy Polar Bear", "type": "Amigurumi", "description": "Made this pattern myself! Polar bears are one of my favorite types of bear.",
+                    "image1": "/img/teddypolarbear.jpg", "image6": "/img/resized/teddypolarbear.jpg"
+                },
+                {
+                    "id": 21, "name": "Ugly Dolls", "type": "Amigurumi", "description": "A bunch of Ugly Dolls in various shapes and colors.",
+                    "image1": "/img/uglydolls.jpg", "image6": "/img/resized/uglydolls.jpg"
+                },
+                {
+                    "id": 22, "name": "The Flash", "type": "Amigurumi", "description": "He runs so fast, it took negative time to crochet.",
+                    "image1": "/img/flash.jpg", "image6": "/img/resized/flash.jpg"
+                },
+                {
+                    "id": 23, "name": "Santa Outfit", "type": "Baby", "description": "Merry Christmas, Santa Jr.",
+                    "image1": "/img/santa.jpg", "image2": "/img/santa2.jpg", "image6": "/img/resized/santa.jpg"
+                },
+                {
+                    "id": 24, "name": "BB-8", "type": "Amigurumi", "description": "The droid we were looking for in Star Wars Episode 7.",
+                    "image1": "/img/bb8.jpg", "image2": "/img/bb82.jpg", "image6": "/img/resized/bb8.jpg"
+                },
+                {
+                    "id": 25, "name": "Harley Quinn", "type": "Amigurumi", "description": "Complete with a mallet, ready for evil shenanigans.",
+                    "image1": "/img/harleyquinn.jpg", "image2": "/img/harleyquinn2.jpg", "image3": "/img/harleyquinn3.jpg", "image6": "/img/resized/harleyquinn.jpg"
+                },
+                {
+                    "id": 26, "name": "Teddy Panda Bear", "type": "Amigurumi", "description": "One of the more satisfying bears I've made yet.",
+                    "image1": "/img/pandabear.jpg", "image6": "/img/resized/pandabear.jpg"
+                },
+                {
+                    "id": 27, "name": "Olaf", "type": "Amigurumi", "description": "That snow guy from Frozen.",
+                    "image1": "/img/olaf.jpg", "image6": "/img/resized/olaf.jpg"
+                },
+                {
+                    "id": 28, "name": "Mini Doll", "type": "Amigurumi", "description": "Originally meant to be a fairy, with a possible wing addition in the near future.",
+                    "image1": "/img/minidoll.jpg", "image2": "/img/minidoll2.jpg", "image6": "/img/resized/minidoll.jpg"
+                },
+                {
+                    "id": 29, "name": "Purple Bear", "type": "Amigurumi", "description": "This bear was a baby shower gift, done in a nice shade of purple. Comes with baby booties!",
+                    "image1": "/img/purplebear.jpg", "image2": "/img/purplebear2.jpg", "image6": "/img/resized/purplebear.jpg"
+                },
+                {
+                    "id": 30, "name": "Wonder Woman Minion", "type": "Amigurumi", "description": "Why not put a minion in a Wonder Woman costume?",
+                    "image1": "/img/wonderwomanminion.jpg", "image6": "/img/resized/wonderwomanminion.jpg"
+                },
+                {
+                    "id": 31, "name": "Batman Minion", "type": "Amigurumi", "description": "Why not put a minion in a Batman costume?",
+                    "image1": "/img/batmanminion.jpg", "image2": "/img/batmanminion2.jpg", "image6": "/img/resized/batmanminion.jpg"
+                },
+                {
+                    "id": 32, "name": "Minion", "type": "Amigurumi", "description": "The smirk is the best part. Something's about to go down.",
+                    "image1": "/img/minion.jpg", "image2": "/img/minion2.jpg", "image6": "/img/resized/minion.jpg"
+                },
+                {
+                    "id": 33, "name": "Ezio", "type": "Amigurumi", "description": "Regular Ezio from Assassin's Creed with all the necessary details.",
+                    "image1": "/img/eziowhite.jpg", "image6": "/img/resized/eziowhite.jpg"
+                },
+                {
+                    "id": 34, "name": "Snow White", "type": "Amigurumi", "description": "She looks pretty! They should make a movie about her.",
+                    "image1": "/img/snowwhite.jpg", "image6": "/img/resized/snowwhite.jpg"
+                },
+                {
+                    "id": 35, "name": "Deadpool", "type": "Amigurumi", "description": "One step closer in my journey to make all the Marvel superheroes.",
+                    "image1": "/img/deadpool.jpg", "image2": "/img/deadpool2.jpg", "image6": "/img/resized/deadpool.jpg"
+                },
+                {
+                    "id": 36, "name": "Hello Kitty", "type": "Amigurumi", "description": "A classic character from Japan, too cute not too crochet.",
+                    "image1": "/img/hellokitty.jpg", "image6": "/img/resized/hellokitty.jpg"
+                },
+                {
+                    "id": 37, "name": "Luz Threads Mascot", "type": "Amigurumi", "description": "ME in amigurumi form! Expect to see more of her in the future in various outfits.",
+                    "image1": "/img/mascot.jpg", "image2": "/img/mascot2.jpg", "image3": "/img/mascot3.jpg", "image4": "/img/mascot4.jpg", "image6": "/img/resized/mascot.jpg"
+                },
+                {
+                    "id": 38, "name": "Snoopy", "type": "Amigurumi", "description": "The Peanuts dog complete with Woodstock!",
+                    "image1": "/img/snoopy.jpg", "image2": "/img/snoopywoodstock.jpg", "image3": "/img/woodstock.jpg", "image6": "/img/resized/snoopy.jpg"
+                },
+                {
+                    "id": 39, "name": "Pink Bunny", "type": "Amigurumi", "description": "In my favorite shade of pink, an adorable bunny done just right the first time, no redos.",
+                    "image1": "/img/pinkbunny.jpg", "image2": "/img/pinkbunny2.jpg", "image6": "/img/resized/pinkbunny.jpg"
+                },
+                {
+                    "id": 40, "name": "Spyro", "type": "Amigurumi", "description": "The dragon we all grew up with in the PS1 era, after toasting a few sheep.",
+                    "image1": "/img/spyro.jpg", "image2": "/img/spyro2.jpg", "image6": "/img/resized/spyro.jpg"
+                }
+            ]);
+        }
     }
-];
-//# sourceMappingURL=mockcrafts.js.map
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9ja2NyYWZ0cy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1vY2tjcmFmdHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O1FBRVcsTUFBTTs7OztZQUFOLG9CQUFBLE1BQU0sR0FBWTtnQkFDNUI7b0JBQ0MsSUFBSSxFQUFFLENBQUMsRUFBRSxNQUFNLEVBQUUsY0FBYyxFQUFFLE1BQU0sRUFBRSxXQUFXLEVBQUUsYUFBYSxFQUFFLG1DQUFtQztvQkFDeEcsUUFBUSxFQUFDLGNBQWMsRUFBRSxRQUFRLEVBQUMsc0JBQXNCLEVBQUUsS0FBSyxFQUFFLElBQUk7aUJBQ3JFO2dCQUNEO29CQUNDLElBQUksRUFBRSxDQUFDLEVBQUUsTUFBTSxFQUFFLFdBQVcsRUFBRSxNQUFNLEVBQUUsV0FBVyxFQUFFLGFBQWEsRUFBRSxrQ0FBa0M7b0JBQ3BHLFFBQVEsRUFBQyxzQkFBc0IsRUFBRSxRQUFRLEVBQUMsOEJBQThCO2lCQUN4RTtnQkFDRDtvQkFDQyxJQUFJLEVBQUUsQ0FBQyxFQUFFLE1BQU0sRUFBRSxRQUFRLEVBQUUsTUFBTSxFQUFFLFdBQVcsRUFBRSxhQUFhLEVBQUUsdUNBQXVDO29CQUN0RyxRQUFRLEVBQUMsaUJBQWlCLEVBQUUsUUFBUSxFQUFDLGtCQUFrQixFQUFFLFFBQVEsRUFBQyx5QkFBeUI7aUJBQzNGO2dCQUNEO29CQUNDLElBQUksRUFBRSxDQUFDLEVBQUUsTUFBTSxFQUFFLFFBQVEsRUFBRSxNQUFNLEVBQUUsV0FBVyxFQUFFLGFBQWEsRUFBRSxpRkFBaUY7b0JBQ2hKLFFBQVEsRUFBQyxpQkFBaUIsRUFBRSxRQUFRLEVBQUMseUJBQXlCO2lCQUM5RDtnQkFDRDtvQkFDQyxJQUFJLEVBQUUsQ0FBQyxFQUFFLE1BQU0sRUFBRSxLQUFLLEVBQUUsTUFBTSxFQUFFLFdBQVcsRUFBRSxhQUFhLEVBQUUsa0JBQWtCO29CQUM5RSxRQUFRLEVBQUMsY0FBYyxFQUFFLFFBQVEsRUFBQyxzQkFBc0I7aUJBQ3hEO2dCQUNEO29CQUND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SSxFQUFFLEVBQUUsRUFBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLE1BQU0sRUFBRSxXQUFXLEVBQUUsYUFBYSxFQUFFLDRFQUE0RTtvQkFDM0ksUUFBUSxFQUFDLGdCQUFnQixFQUFFLFFBQVEsRUFBQyxpQkFBaUIsRUFBRSxRQUFRLEVBQUMsd0JBQXdCO2lCQUN4RjthQUNELENBQUEsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q3JhZnR9IGZyb20gJy4vY3JhZnQnO1xyXG5cclxuZXhwb3J0IHZhciBDUkFGVFM6IENyYWZ0W10gPSBbXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAwLCBcIm5hbWVcIjogXCJSYWluYm93IERhc2hcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJXb3JrIGluIFByb2dyZXNzOiBNeSBMaXR0bGUgUG9ueSFcIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy93aXAuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvd2lwLmpwZ1wiLCBcIndpcFwiOiB0cnVlXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDEsIFwibmFtZVwiOiBcIkJveSBUZWRkeVwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIlN0dWZmZWQgQmVhcjogQW1pZ3VydW1pIEVkaXRpb24uXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvY3JvY2hldGJlYXIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvY3JvY2hldGJlYXIuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMiwgXCJuYW1lXCI6IFwiQmF0bWFuXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiTm93IGl0J3MgdGltZSB0byBjcm9jaGV0IGEgYmF0bW9iaWxlLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2JhdG1hbi5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvYmF0bWFuMi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9iYXRtYW4uanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMywgXCJuYW1lXCI6IFwiWm9tYmllXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiQ3VzdG9tIHpvbWJpZSwgY29tcGxldGUgd2l0aCBicmFpbnMgYW5kIGJsb29kIGZvciB0aGUgbW9zdCBoYXVudGluZyBleHBlcmllbmNlLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL3pvbWJpZS5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC96b21iaWUuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogNCwgXCJuYW1lXCI6IFwiSGF0XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiT25lIGhhdCBvZiBtYW55LlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2hhdC5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9oYXQuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogNSwgXCJuYW1lXCI6IFwiU2xvdWNoIEhhdFwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIkl0J3MgYSBoYXQgdGhhdCBzbG91Y2hlcy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9zbG91Y2hoYXQuanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL3Nsb3VjaGhhdDIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvc2xvdWNoaGF0LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDYsIFwibmFtZVwiOiBcIkZTVSBIYXRcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJIYXRzIHdpdGggRlNVIGNvbG9ycywgZWFyIHdhcm1lcnMsIGFuZCBwb21wb21zLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL3RlYW1oYXQuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvdGVhbWhhdC5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiA3LCBcIm5hbWVcIjogXCJab21iaWUgSGF0XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVGhpcyBjb3VsZCBiZSB5b3VyIGVudGlyZSBIYWxsb3dlZW4gY29zdHVtZSBhbmQgeW91J2QgPGk+c3RpbGw8L2k+IGdldCBjYW5keS5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy96b21iaWVoYXQuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvem9tYmllaGF0LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDgsIFwibmFtZVwiOiBcIkJsdWUgVHVydGxlXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVHVydGxlcyBhcmVuJ3QgYWN0dWFsbHkgc2xvdy4gVGhlIHJlc3Qgb2YgdGhlIHdvcmxkIGlzIGp1c3QgdG9vIGZhc3QuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvdHVydGxlLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL3R1cnRsZS5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiA5LCBcIm5hbWVcIjogXCJJcm9uIE1hbiBTYWNrYm95XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiU29ydCBvZiBhIFNhY2tib3kgaW4gYW4gSXJvbiBNYW4gc3VpdC4gSW5zcGlyZWQgYnkgYSA8YSBocmVmPVxcXCJodHRwOi8vZ29sZGVuamVsbHliZWFuLmNvbVxcXCI+R29sZGVuIEplbGx5YmVhbjwvYT4gcGF0dGVybi5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9pcm9ubWFuLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2lyb25tYW4uanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMTAsIFwibmFtZVwiOiBcIlNhY2tib3lcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJUaGF0IG9uZSBndXkgZnJvbSBMaXR0bGUgQmlnIFBsYW5ldC5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9zYWNrYm95LmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL3NhY2tib3kuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMTEsIFwibmFtZVwiOiBcIkV6aW8gU2Fja2JveVwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIk1vZGlmaWVkIEFzc2Fzc2luJ3MgQ3JlZWQgU2Fja2JveSBmcm9tIDxhIGhyZWY9XFxcImh0dHA6Ly9nb2xkZW5qZWxseWJlYW4uY29tL3lvdXR1YmUvYWJvdXQvZXppby1zYWNrYm95L1xcXCI+R29sZGVuIEplbGx5YmVhbidzIHBhdHRlcm4uPC9hPlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2Fzc2Fzc2luLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2Fzc2Fzc2luLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDEyLCBcIm5hbWVcIjogXCJNYXJpbGxcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJPbmUgb2YgbXkgZmF2b3JpdGUgUG9rZW1vbi4gSXNuJ3QgaXQgYWRvcmFibGU/IE15IHZlcnNpb24gb2YgPGEgaHJlZj1cXFwiaHR0cDovL25hbmV0dGVjcm9jaGV0LmJsb2dzcG90LmNvbS8yMDExLzA3L21hcmlsbC1wYXR0ZXJuLmh0bWxcXFwiPk5hbmV0dGUgQ3JvY2hldCdzIHBhdHRlcm4uPC9hPlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL21hcmlsbC5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvbWFyaWxsMi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9tYXJpbGwuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMTMsIFwibmFtZVwiOiBcIkhhdHN1bmUgTWlrdVwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIlRoZSBoYWlyIGlzIHRoZSBiZXN0IHBhcnQuIElmIHlvdSBiZWxpZXZlLCBpdCBhbHNvIGRvZXMgdGhlIGRhbmNlIG1vdmVzLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL21pa3UuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvbWlrdS5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAxNCwgXCJuYW1lXCI6IFwiQmFieSBQaWthY2h1XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiQ2hpYmkgUGlrYWNodSBvbiBoaXMgYmVsbHkuIE15IHZlcnNpb24gb2YgPGEgaHJlZj1cXFwiaHR0cDovL2FwaGlkNzc3LmRldmlhbnRhcnQuY29tL2FydC9CYWJ5LVBpa2FjaHUtd2l0aC1wYXR0ZXJuLTQzMTA4Njk1MFxcXCI+YXBoaWQ3NzcncyBwYXR0ZXJuLjwvYT5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9waWthY2h1LmpwZ1wiLCBcImltYWdlMlwiOlwiL2ltZy9waWthY2h1Mi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9waWthY2h1LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDE1LCBcIm5hbWVcIjogXCJNaW5pb24gSGF0XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiUHJvYmFibHkgbXkgZmF2b3JpdGUgaGF0IHNvIGZhci5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9taW5pb25oYXQuanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL21pbmlvbmhhdDIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvbWluaW9uaGF0LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDE2LCBcIm5hbWVcIjogXCJNeSBMaXR0bGUgVG90b3JvXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVG90b3JvIGZyb20gdGhlIGFuaW1lIG1vdmllIE15IExpdHRsZSBUb3Rvcm8uXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvdG90b3JvLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL3RvdG9yby5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAxNywgXCJuYW1lXCI6IFwiQnVubnlcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJUaGUgY3V0ZXN0IGJ1bm55IGFtaWd1cnVtaSBJJ3ZlIG1hZGUgeWV0IVwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2J1bm55LmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2J1bm55LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDE4LCBcIm5hbWVcIjogXCJDYXB0YWluIEFtZXJpY2FcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJDYXB0YWluIEFtZXJpY2E6IFRoZSBGaXJzdCBBdmVuZ2VyIC0gQW1pZ3VydW1pIEVkaXRpb24uXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvY2FwdGFpbi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9jYXB0YWluLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDE5LCBcIm5hbWVcIjogXCJQYXRyaW90cyBTY2FyZlwiLCBcInR5cGVcIjogXCJBY2Nlc3NvcnlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIk15IGZhdm9yaXRlIGZvb3RiYWxsIHRlYW0ncyBsb2dvIG9uIGEgc2NhcmYuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvcGF0cmlvdHNzY2FyZi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9wYXRyaW90c3NjYXJmLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDIwLCBcIm5hbWVcIjogXCJUZWRkeSBQb2xhciBCZWFyXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiTWFkZSB0aGlzIHBhdHRlcm4gbXlzZWxmISBQb2xhciBiZWFycyBhcmUgb25lIG9mIG15IGZhdm9yaXRlIHR5cGVzIG9mIGJlYXIuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvdGVkZHlwb2xhcmJlYXIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvdGVkZHlwb2xhcmJlYXIuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMjEsIFwibmFtZVwiOiBcIlVnbHkgRG9sbHNcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJBIGJ1bmNoIG9mIFVnbHkgRG9sbHMgaW4gdmFyaW91cyBzaGFwZXMgYW5kIGNvbG9ycy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy91Z2x5ZG9sbHMuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvdWdseWRvbGxzLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDIyLCBcIm5hbWVcIjogXCJUaGUgRmxhc2hcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJIZSBydW5zIHNvIGZhc3QsIGl0IHRvb2sgbmVnYXRpdmUgdGltZSB0byBjcm9jaGV0LlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2ZsYXNoLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2ZsYXNoLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDIzLCBcIm5hbWVcIjogXCJTYW50YSBPdXRmaXRcIiwgXCJ0eXBlXCI6IFwiQmFieVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiTWVycnkgQ2hyaXN0bWFzLCBTYW50YSBKci5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9zYW50YS5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvc2FudGEyLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL3NhbnRhLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDI0LCBcIm5hbWVcIjogXCJCQi04XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVGhlIGRyb2lkIHdlIHdlcmUgbG9va2luZyBmb3IgaW4gU3RhciBXYXJzIEVwaXNvZGUgNy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9iYjguanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL2JiODIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvYmI4LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDI1LCBcIm5hbWVcIjogXCJIYXJsZXkgUXVpbm5cIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJDb21wbGV0ZSB3aXRoIGEgbWFsbGV0LCByZWFkeSBmb3IgZXZpbCBzaGVuYW5pZ2Fucy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9oYXJsZXlxdWlubi5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvaGFybGV5cXVpbm4yLmpwZ1wiLCBcImltYWdlM1wiOlwiL2ltZy9oYXJsZXlxdWlubjMuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvaGFybGV5cXVpbm4uanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMjYsIFwibmFtZVwiOiBcIlRlZGR5IFBhbmRhIEJlYXJcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJPbmUgb2YgdGhlIG1vcmUgc2F0aXNmeWluZyBiZWFycyBJJ3ZlIG1hZGUgeWV0LlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL3BhbmRhYmVhci5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9wYW5kYWJlYXIuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMjcsIFwibmFtZVwiOiBcIk9sYWZcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJUaGF0IHNub3cgZ3V5IGZyb20gRnJvemVuLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL29sYWYuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvb2xhZi5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAyOCwgXCJuYW1lXCI6IFwiTWluaSBEb2xsXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiT3JpZ2luYWxseSBtZWFudCB0byBiZSBhIGZhaXJ5LCB3aXRoIGEgcG9zc2libGUgd2luZyBhZGRpdGlvbiBpbiB0aGUgbmVhciBmdXR1cmUuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvbWluaWRvbGwuanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL21pbmlkb2xsMi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9taW5pZG9sbC5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAyOSwgXCJuYW1lXCI6IFwiUHVycGxlIEJlYXJcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJUaGlzIGJlYXIgd2FzIGEgYmFieSBzaG93ZXIgZ2lmdCwgZG9uZSBpbiBhIG5pY2Ugc2hhZGUgb2YgcHVycGxlLiBDb21lcyB3aXRoIGJhYnkgYm9vdGllcyFcIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9wdXJwbGViZWFyLmpwZ1wiLCBcImltYWdlMlwiOlwiL2ltZy9wdXJwbGViZWFyMi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9wdXJwbGViZWFyLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDMwLCBcIm5hbWVcIjogXCJXb25kZXIgV29tYW4gTWluaW9uXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiV2h5IG5vdCBwdXQgYSBtaW5pb24gaW4gYSBXb25kZXIgV29tYW4gY29zdHVtZT9cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy93b25kZXJ3b21hbm1pbmlvbi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC93b25kZXJ3b21hbm1pbmlvbi5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAzMSwgXCJuYW1lXCI6IFwiQmF0bWFuIE1pbmlvblwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIldoeSBub3QgcHV0IGEgbWluaW9uIGluIGEgQmF0bWFuIGNvc3R1bWU/XCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvYmF0bWFubWluaW9uLmpwZ1wiLCBcImltYWdlMlwiOlwiL2ltZy9iYXRtYW5taW5pb24yLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2JhdG1hbm1pbmlvbi5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAzMiwgXCJuYW1lXCI6IFwiTWluaW9uXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVGhlIHNtaXJrIGlzIHRoZSBiZXN0IHBhcnQuIFNvbWV0aGluZydzIGFib3V0IHRvIGdvIGRvd24uXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvbWluaW9uLmpwZ1wiLCBcImltYWdlMlwiOlwiL2ltZy9taW5pb24yLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL21pbmlvbi5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAzMywgXCJuYW1lXCI6IFwiRXppb1wiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIlJlZ3VsYXIgRXppbyBmcm9tIEFzc2Fzc2luJ3MgQ3JlZWQgd2l0aCBhbGwgdGhlIG5lY2Vzc2FyeSBkZXRhaWxzLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2V6aW93aGl0ZS5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9lemlvd2hpdGUuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMzQsIFwibmFtZVwiOiBcIlNub3cgV2hpdGVcIiwgXCJ0eXBlXCI6IFwiQW1pZ3VydW1pXCIsIFwiZGVzY3JpcHRpb25cIjogXCJTaGUgbG9va3MgcHJldHR5ISBUaGV5IHNob3VsZCBtYWtlIGEgbW92aWUgYWJvdXQgaGVyLlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL3Nub3d3aGl0ZS5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9zbm93d2hpdGUuanBnXCJcclxuXHR9LFxyXG5cdHtcclxuXHRcdFwiaWRcIjogMzUsIFwibmFtZVwiOiBcIkRlYWRwb29sXCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiT25lIHN0ZXAgY2xvc2VyIGluIG15IGpvdXJuZXkgdG8gbWFrZSBhbGwgdGhlIE1hcnZlbCBzdXBlcmhlcm9lcy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9kZWFkcG9vbC5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvZGVhZHBvb2wyLmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL2RlYWRwb29sLmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDM2LCBcIm5hbWVcIjogXCJIZWxsbyBLaXR0eVwiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIkEgY2xhc3NpYyBjaGFyYWN0ZXIgZnJvbSBKYXBhbiwgdG9vIGN1dGUgbm90IHRvbyBjcm9jaGV0LlwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL2hlbGxva2l0dHkuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvaGVsbG9raXR0eS5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAzNywgXCJuYW1lXCI6IFwiTHV6IFRocmVhZHMgTWFzY290XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiTUUgaW4gYW1pZ3VydW1pIGZvcm0hIEV4cGVjdCB0byBzZWUgbW9yZSBvZiBoZXIgaW4gdGhlIGZ1dHVyZSBpbiB2YXJpb3VzIG91dGZpdHMuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvbWFzY290LmpwZ1wiLCBcImltYWdlMlwiOlwiL2ltZy9tYXNjb3QyLmpwZ1wiLCBcImltYWdlM1wiOlwiL2ltZy9tYXNjb3QzLmpwZ1wiLCBcImltYWdlNFwiOlwiL2ltZy9tYXNjb3Q0LmpwZ1wiLCBcImltYWdlNlwiOlwiL2ltZy9yZXNpemVkL21hc2NvdC5qcGdcIlxyXG5cdH0sXHJcblx0e1xyXG5cdFx0XCJpZFwiOiAzOCwgXCJuYW1lXCI6IFwiU25vb3B5XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiVGhlIFBlYW51dHMgZG9nIGNvbXBsZXRlIHdpdGggV29vZHN0b2NrIVwiLCBcclxuXHRcdFwiaW1hZ2UxXCI6XCIvaW1nL3Nub29weS5qcGdcIiwgXCJpbWFnZTJcIjpcIi9pbWcvc25vb3B5d29vZHN0b2NrLmpwZ1wiLCBcImltYWdlM1wiOlwiL2ltZy93b29kc3RvY2suanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvc25vb3B5LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDM5LCBcIm5hbWVcIjogXCJQaW5rIEJ1bm55XCIsIFwidHlwZVwiOiBcIkFtaWd1cnVtaVwiLCBcImRlc2NyaXB0aW9uXCI6IFwiSW4gbXkgZmF2b3JpdGUgc2hhZGUgb2YgcGluaywgYW4gYWRvcmFibGUgYnVubnkgZG9uZSBqdXN0IHJpZ2h0IHRoZSBmaXJzdCB0aW1lLCBubyByZWRvcy5cIiwgXHJcblx0XHRcImltYWdlMVwiOlwiL2ltZy9waW5rYnVubnkuanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL3BpbmtidW5ueTIuanBnXCIsIFwiaW1hZ2U2XCI6XCIvaW1nL3Jlc2l6ZWQvcGlua2J1bm55LmpwZ1wiXHJcblx0fSxcclxuXHR7XHJcblx0XHRcImlkXCI6IDQwLCBcIm5hbWVcIjogXCJTcHlyb1wiLCBcInR5cGVcIjogXCJBbWlndXJ1bWlcIiwgXCJkZXNjcmlwdGlvblwiOiBcIlRoZSBkcmFnb24gd2UgYWxsIGdyZXcgdXAgd2l0aCBpbiB0aGUgUFMxIGVyYSwgYWZ0ZXIgdG9hc3RpbmcgYSBmZXcgc2hlZXAuXCIsIFxyXG5cdFx0XCJpbWFnZTFcIjpcIi9pbWcvc3B5cm8uanBnXCIsIFwiaW1hZ2UyXCI6XCIvaW1nL3NweXJvMi5qcGdcIiwgXCJpbWFnZTZcIjpcIi9pbWcvcmVzaXplZC9zcHlyby5qcGdcIlxyXG5cdH1cclxuXTsiXX0=

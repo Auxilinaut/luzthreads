@@ -2,8 +2,8 @@ import {Craft} from './craft';
 
 export var CRAFTS: Craft[] = [
 	{
-		"id": 0, "name": "WIP", "type": "Amigurumi", "description": "Work in Progress", 
-		"image1":"", "image6":"", "wip": true
+		"id": 0, "name": "Rainbow Dash", "type": "Amigurumi", "description": "Work in Progress: My Little Pony!", 
+		"image1":"/img/wip.jpg", "image6":"/img/resized/wip.jpg", "wip": true
 	},
 	{
 		"id": 1, "name": "Boy Teddy", "type": "Amigurumi", "description": "Stuffed Bear: Amigurumi Edition.", 
@@ -151,7 +151,7 @@ export var CRAFTS: Craft[] = [
 	},
 	{
 		"id": 37, "name": "Luz Threads Mascot", "type": "Amigurumi", "description": "ME in amigurumi form! Expect to see more of her in the future in various outfits.", 
-		"image1":"/img/mascot.jpg", "image2":"/img/mascot2.jpg", "image3":"/img/mascot3.jpg", "image6":"/img/resized/mascot.jpg"
+		"image1":"/img/mascot.jpg", "image2":"/img/mascot2.jpg", "image3":"/img/mascot3.jpg", "image4":"/img/mascot4.jpg", "image6":"/img/resized/mascot.jpg"
 	},
 	{
 		"id": 38, "name": "Snoopy", "type": "Amigurumi", "description": "The Peanuts dog complete with Woodstock!", 
