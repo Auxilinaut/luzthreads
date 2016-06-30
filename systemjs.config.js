@@ -2,16 +2,18 @@
 
   // map tells the System loader where to look for things
   var map = {
-    'app':                        'app', // 'dist',
+    'app':                        'dist/app',
     'rxjs':                       'node_modules/rxjs',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     '@angular':                   'node_modules/@angular',
-	'moment': 					  'node_modules/moment/moment.js'
+	'moment':					  'node_modules/moment/moment.js',
+	'ng2-bootstrap':			  'node_modules/ng2-bootstrap/'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app':                        { main: 'main.js',  defaultExtension: 'js' },
+    'app':                        { main: 'main.js', defaultExtension: 'js' },
+    'ng2-bootstrap':              { main: 'bundles/ng2-bootstrap.min.js', defaultExtension:'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { defaultExtension: 'js' },
   };
@@ -23,7 +25,6 @@
     '@angular/http',
     '@angular/platform-browser',
     '@angular/platform-browser-dynamic',
-    '@angular/router',
     '@angular/router-deprecated',
     '@angular/testing',
     '@angular/upgrade',
