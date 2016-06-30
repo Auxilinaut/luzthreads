@@ -65,7 +65,7 @@ gulp.task('libs', ['resources'], () => {
             'reflect-metadata/Reflect.js',
             'zone.js/dist/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
-        .pipe(gulp.dest("dist/lib"));
+        .pipe(gulp.dest("dist/node_modules"));
 });
 
 gulp.task('ready', ['clean', 'resources', 'libs', 'build']);
