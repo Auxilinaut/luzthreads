@@ -44,28 +44,29 @@ gulp.task('bundle', ['ts'], function() {
         });
 });
 
-/** this builds for prod, with bundling */
+/** this builds the thing, with bundling */
 gulp.task('build', ['ts', 'bundle']);
 
-/** removes dist directory */
+/** removes dist/ */
 gulp.task('clean', (cb) => {
     return del(["dist"], cb);
 });
 
-/** copies necessary resources into dist directory */
+/** copies necessary resources into dist/ */
 gulp.task('resources', ['clean'], () => {
     return gulp.src(["!**/*.ts", "!node_modules/", "!node_modules/**", "!dist/", "!dist/**", "**/*"])
         .pipe(gulp.dest("dist"));
 });
 
-
+/** copies some shims and stuff into dist/lib/ */
 gulp.task('libs', ['resources'], () => {
 	return gulp.src([
             'es6-shim/es6-shim.min.js',
             'reflect-metadata/Reflect.js',
             'zone.js/dist/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
-        .pipe(gulp.dest("dist/node_modules"));
+        .pipe(gulp.dest("dist/lib"));
 });
 
+/** clean, compile, and copy into dist/ */
 gulp.task('ready', ['clean', 'resources', 'libs', 'build']);
