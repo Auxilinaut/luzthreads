@@ -8,7 +8,9 @@
     '@angular':                   'node_modules/@angular',
 	'moment':					  'node_modules/moment/moment.js',
 	'ng2-bootstrap':			  'node_modules/ng2-bootstrap/',
-  'instafeed':         'js/instafeed.min.js'
+  'instafeed':         'js/instafeed.min.js',
+  'firebase': 'node_modules/firebase/firebase.js',
+  'angularfire2': 'node_modules/angularfire2'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -17,6 +19,10 @@
     'ng2-bootstrap':              { main: 'bundles/ng2-bootstrap.min.js', defaultExtension:'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { defaultExtension: 'js' },
+    'angularfire2': {
+      defaultExtension: 'js',
+      main: 'angularfire2.js'
+    }
   };
 
   var packageNames = [

@@ -34,7 +34,7 @@ gulp.task('bundle', ['ts'], function() {
            - options {}
     */
     return builder
-        .buildStatic(appProd + '/main.js', appProd + '/bundle.js', { minify: true, sourceMaps: true})
+        .buildStatic(appProd + '/main.js', appProd + '/bundle.js', { minify: false, sourceMaps: true})
         .then(function() {
             console.log('Build complete');
         })
@@ -69,4 +69,4 @@ gulp.task('libs', ['resources'], () => {
 });
 
 /** clean, compile, and copy into dist/ */
-gulp.task('ready', ['clean', 'resources', 'libs', 'build']);
+gulp.task('ready', ['resources', 'libs', 'build']);

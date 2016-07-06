@@ -7,7 +7,9 @@ import { CraftsComponent } from './crafts.component';
 import { CraftDetailComponent } from './craftdetail.component';
 import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
+import { CraftEditComponent } from './craftedit.component';
 import { CollapseDirective, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstrap';
+import {AngularFire} from 'angularfire2';
 
 @Component({
   selector: 'luzthreads',
@@ -72,7 +74,12 @@ import { CollapseDirective, Ng2BootstrapConfig } from 'ng2-bootstrap/ng2-bootstr
 		path: '/contact',
 		name: 'Contact',
 		component: ContactComponent
-	}
+	},
+	{
+		path: '/craftedit',
+		name: 'CraftEdit',
+		component: CraftEditComponent
+	},
 ])
 
 export class AppComponent {
