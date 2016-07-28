@@ -14,20 +14,37 @@
 			</span>
 		</div>
 	</div>
-	<div class="row">
-		<div *ngIf="craft.image2" class="col-sm-6">
+	<div *ngIf="imagenum===1" class="row">
+		<div class="col-xs-12">
 			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="craft.image2" class="col-sm-6">
+	</div>
+	<div *ngIf="imagenum===2" class="row">
+		<div class="col-md-6">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+		</div>
+		<div class="col-md-6">
 			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="!craft.image2" class="col-xs-12">
+	</div>
+	<div *ngIf="imagenum===3" class="row">
+		<div class="col-lg-4">
 			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="craft.image3" class="col-sm-6">
+		<div class="col-lg-4">
+			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+		</div>
+		<div class="col-lg-4">
 			<img src="{{craft.image3}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
-		<div *ngIf="craft.image4" class="col-sm-6">
+	</div>
+	<div *ngIf="imagenum===4" class="row">
+		<div class="col-md-6">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+			<img src="{{craft.image3}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
+		</div>
+		<div class="col-md-6">
+			<img src="{{craft.image2}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 			<img src="{{craft.image4}}" class="imgdetail img-rounded img-fluid center-block" (click)="goToDetail(craft.id-1)"/>
 		</div>
 	</div>

@@ -1,22 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
 import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import {ReplaySubject} from 'rxjs/replaysubject';
 
 @Component({
   selector: 'home',
   directives: [ROUTER_DIRECTIVES, CAROUSEL_DIRECTIVES],
-  templateUrl: 'home.component.html',
-  inputs:['wip']
+  templateUrl: 'home.component.html'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
 	crafts: Craft[] = [];
-	wip: Craft = ({id:0,type:"",name:"",description:"",image1:"",image6:""});
+	subject: ReplaySubject<Craft[]>;
 	constructor(private _router: Router, private _craftService: CraftService) { }
 	ngOnInit() {
-		this._craftService.getCraft(0).then(craft => this.wip = craft);
-		this._craftService.getCrafts().then(crafts => this.crafts = crafts.slice(Math.max(crafts.length - 3, 1)).reverse());
+		this.subject = new ReplaySubject<Craft[]>();
+		this._craftService.getCrafts().subscribe(this.subject);
+		this.subject.subscribe(crafts => this.crafts = crafts.slice(Math.max(crafts.length - 3, 1)).reverse());
 		this.initInstafeed();
 	}
 	initInstafeed(){
@@ -36,7 +37,10 @@ export class HomeComponent {
 		this._router.navigate(link);
 	}
 	goToCrafts(){
-		let link = ['Crafts']
+		let link = ['Crafts'];
 		this._router.navigate(link);
+	}
+	ngOnDestroy(){
+		this.subject.unsubscribe();
 	}
 }

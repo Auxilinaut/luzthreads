@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 var tsProject = ts.createProject('tsconfig.json');
 
-var appDev = 'app'; // where your ts files are, whatever the folder structure in this folder, it will be recreated in the below 'dist/app' folder
+var appDev = 'app';
 var appProd = 'dist/app';
 
 /** first transpile ts files */
@@ -21,8 +21,8 @@ gulp.task('ts', () => {
         .pipe(gulp.dest(appProd));
 });
 
-/** then bundle */
-gulp.task('bundle', ['ts'], function() {
+/** then bundle either for prod */
+gulp.task('bundleProd', ['ts'], function() {
     // optional constructor options
     // sets the baseURL and loads the configuration file
     var builder = new Builder('', 'systemjs.config.js');
@@ -30,6 +30,29 @@ gulp.task('bundle', ['ts'], function() {
     /*
        the parameters of the below buildStatic() method are:
            - your transcompiled application boot file (the one wich would contain the bootstrap(MyApp, [PROVIDERS]) function - in my case 'dist/app/boot.js'
+           - the output (file into which it would output the bundled code)
+           - options {}
+    */
+    return builder
+        .buildStatic(appProd + '/main.js', appProd + '/bundle.js', { minify: true, sourceMaps: false})
+        .then(function() {
+            console.log('Build complete');
+        })
+        .catch(function(err) {
+            console.log('Build error');
+            console.log(err);
+        });
+});
+
+/** or bundle for dev */
+gulp.task('bundleDev', ['ts'], function() {
+    // optional constructor options
+    // sets the baseURL and loads the configuration file
+    var builder = new Builder('', 'systemjs.config.js');
+
+    /*
+       the parameters of the below buildStatic() method are:
+           - transcompiled application boot file (the one which contains the bootstrap(App, [PROVIDERS]) function)'
            - the output (file into which it would output the bundled code)
            - options {}
     */
@@ -44,29 +67,50 @@ gulp.task('bundle', ['ts'], function() {
         });
 });
 
-/** this builds the thing, with bundling */
-gulp.task('build', ['ts', 'bundle']);
+/** this builds for prod */
+gulp.task('buildProd', ['libs', 'ts', 'bundleProd']);
+/** this builds for dev */
+gulp.task('buildDev', ['ts', 'bundleDev']);
 
-/** removes dist/ */
-gulp.task('clean', (cb) => {
-    return del(["dist"], cb);
-});
-
-/** copies necessary resources into dist/ */
+/** copies all necessary resources into dist/ after a clean */
 gulp.task('resources', ['clean'], () => {
     return gulp.src(["!**/*.ts", "!node_modules/", "!node_modules/**", "!dist/", "!dist/**", "**/*"])
         .pipe(gulp.dest("dist"));
 });
-
-/** copies some shims and stuff into dist/lib/ */
+/** copies only html resources into dist/ */
+gulp.task('html', ['dehtml'], () => {
+    return gulp.src(["*.html"])
+        .pipe(gulp.dest("dist"));
+});
+/** copies only app/js into dist/ */
+gulp.task('js', () => {
+    return gulp.src(["app/*.js"])
+        .pipe(gulp.dest("dist"));
+});
+/** copies required shims and libs into dist/lib/ */
 gulp.task('libs', ['resources'], () => {
 	return gulp.src([
             'es6-shim/es6-shim.min.js',
             'reflect-metadata/Reflect.js',
             'zone.js/dist/**'
-        ], {cwd: "node_modules/**"}) /* Glob required here. */
+        ], {cwd: "node_modules/**"}) // Glob required here.
         .pipe(gulp.dest("dist/lib"));
 });
 
-/** clean, compile, and copy into dist/ */
-gulp.task('ready', ['resources', 'libs', 'build']);
+/** removes html files from dist/ */
+gulp.task('dehtml', (cb) => {
+    return del(["dist/*.html"], cb);
+});
+/** removes js from dist/ */
+gulp.task('debundle', (cb) => {
+    return del(["dist/app/*.js"], cb);
+})
+/** removes dist/ */
+gulp.task('clean', (cb) => {
+    return del(["dist"], cb);
+});
+
+/** clean, compile, and copy into dist/ for prod */
+gulp.task('ready', ['clean', 'resources', 'libs', 'buildProd']);
+/** recompile only for dev */
+gulp.task('recompile', ['dehtml','debundle','html','buildDev']);

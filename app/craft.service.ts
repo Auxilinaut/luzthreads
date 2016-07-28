@@ -1,19 +1,29 @@
-import {CRAFTS} from './mockcrafts';
-import {Injectable} from '@angular/core';
+import {Component, Injectable} from '@angular/core';
+import {Craft} from './craft'
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import {Observable} from 'rxjs/observable';
+import 'rxjs/add/operator/toarray';
 
 @Injectable()
 
+@Component({
+  moduleId: module.id
+})
+
 export class CraftService {
-	getCrafts(startIndex?: number, endIndex?:number){
+	public dbCrafts: FirebaseListObservable<Craft[]>
+	constructor(public af: AngularFire) {
+      this.dbCrafts = af.database.list('crafts');
+  	}
+	getCrafts(startIndex?: number, endIndex?:number): Observable<Craft[]>{
 		if (startIndex && endIndex){
-			return Promise.resolve(CRAFTS).then(crafts => crafts.filter(craft => craft.id >= endIndex && craft.id < startIndex));
+			return this.dbCrafts.map(crafts => crafts.filter(craft => craft.id >= endIndex && craft.id < startIndex));
+		}else{
+			return this.dbCrafts.map(crafts => crafts);
 		}
-		return Promise.resolve(CRAFTS);
 	}
-	getCraft(id: number){
-		return Promise.resolve(CRAFTS).then(crafts => crafts.filter(craft => craft.id === id)[0]);
-	}
-	getLength(){
-		return CRAFTS.length;
+	getCraft(id: number): Observable<Craft>{
+		return this.dbCrafts.map(crafts => crafts.find(craft=>craft.id === id));
 	}
 }
+

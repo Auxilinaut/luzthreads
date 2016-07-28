@@ -2,6 +2,7 @@
 
 import {bootstrap}    from '@angular/platform-browser-dynamic';
 import {AppComponent} from './app.component';
+import { CraftService }     from './craft.service';
 import {enableProdMode} from '@angular/core';
 import { FIREBASE_PROVIDERS, defaultFirebase, AngularFire } from 'angularfire2';
 enableProdMode();
@@ -13,5 +14,6 @@ bootstrap(AppComponent, [
     authDomain: "luz-threads.firebaseapp.com",
     databaseURL: "https://luz-threads.firebaseio.com",
     storageBucket: "luz-threads.appspot.com"
-  })
+  }),
+  CraftService
 ]);

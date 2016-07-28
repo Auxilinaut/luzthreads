@@ -45,7 +45,8 @@ import {AngularFire} from 'angularfire2';
 		
   `,
   directives: [ROUTER_DIRECTIVES, CollapseDirective],
-  providers: [ROUTER_PROVIDERS, CraftService]
+	providers: [ROUTER_PROVIDERS]
+  //providers: [ROUTER_PROVIDERS, CraftService]
 })
 
 @RouteConfig([
