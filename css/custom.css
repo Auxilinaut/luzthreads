@@ -227,7 +227,7 @@ a {
 
 .projContainer img {
 transition: 0.3s;
-max-width:15em;
+/*max-width:15em;*/
 }
 
 .projContainer:hover img {
