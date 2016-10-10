@@ -1,11 +1,13 @@
 {
   "globalDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "firebase3": "file:node_modules/angularfire2/firebase3.d.ts",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
-    "node": "registry:dt/node#6.0.0+20160621231320"
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759"
   },
-  "dependencies": {
-    "es6-promise": "registry:npm/es6-promise#3.0.0+20160211003958"
-  }
+  "files": [
+    "node_modules/angularfire2/index.d.ts",
+    "node_modules/firebase/firebase.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

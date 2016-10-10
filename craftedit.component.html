@@ -1,8 +1,0 @@
-<div class="container">
-	<div class="row titlerow">
-		<h1>My Portfolio</h1>
-	</div>
-	<div class="row center-block">
-		<div class="col-sm-12"><center><template ngFor let-craft [ngForOf]="crafts | async"><div *ngIf="!craft.wip" class="projContainer"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></template></center></div>
-	</div>
-</div>

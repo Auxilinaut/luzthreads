@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
 
 @Component({
+  moduleId: module.id,
   selector: 'contact',
-  directives: [ROUTER_DIRECTIVES],
   templateUrl: 'contact.component.html'
 })
 export class ContactComponent {

@@ -1,0 +1,11 @@
+<div class="container-fluid" style="text-align: center;">
+	<div class="row titlerow">
+		<h1 class="text-center">My Portfolio</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-12"><template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer" (click)="goToDetail(craft.id)"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></template></div>
+	</div>
+	<div *ngIf="craftsLeft" class="row" style="padding-top:1em;">
+		<button class="btn btn-default" (click)="addCrafts(changeRate)">Load More</button>
+	</div>
+</div>

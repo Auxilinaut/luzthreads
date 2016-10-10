@@ -1,101 +1,124 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {RouteParams, Router} from '@angular/router-deprecated';
+import {Component, OnInit, DoCheck, OnDestroy} from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
 import {ReplaySubject} from 'rxjs/replaysubject';
-import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap'
 
 @Component({
-  selector: 'craftdetail',
-  directives: [CAROUSEL_DIRECTIVES],
-  templateUrl: 'craftdetail.component.html',
-  inputs: ['imagenum']
+	moduleId: module.id,
+	selector: 'craftdetail',
+	templateUrl: 'craftdetail.component.html'
 })
-export class CraftDetailComponent implements OnInit, OnDestroy{
+export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 	craft: Craft;
 	previouscraft: Craft;
 	nextcraft: Craft;
 
-	private subject: ReplaySubject<Craft>;
-	private prevsubject: ReplaySubject<Craft>;
-	private nextsubject: ReplaySubject<Craft>;
+	id: number;
+	previousid: number;
+	nextid: number;
 
-	imagenum: number = 1;
+	private subject: ReplaySubject<Craft[]>;
+	/*private prevsubject: ReplaySubject<Craft>;
+	private nextsubject: ReplaySubject<Craft>;*/
+
+	//imagenum: number = 1;
 
 	constructor(
-		private _router: Router,
-		private _routeParams: RouteParams,
-		private _craftService: CraftService){}
+		private router: Router,
+		private route: ActivatedRoute,
+		private craftService: CraftService){ }
 		
 	ngOnInit() {
-		let id = +this._routeParams.get('id');
-		let previousid = id - 1;
-		let nextid = id + 1;
-
-		this.subject = new ReplaySubject<Craft>();
-		this.prevsubject = new ReplaySubject<Craft>();
-		this.nextsubject = new ReplaySubject<Craft>();
-
-		this._craftService.getCraft(id).subscribe(this.subject);
-		this.subject.subscribe(
-			c => {
-				this.craft = c;
-				if (c.image4){
-					this.imagenum = 4;
-				}else if (c.image3){
-					this.imagenum = 3;
-				}else if (c.image2){
-					this.imagenum = 2;
-				}else{
-					this.imagenum = 1;
-				}
-			},
-			e => console.log('onError: ' + e.message),
-    		() => console.log('onCompleted')
-		);
-
-		this._craftService.getCraft(previousid).subscribe(this.prevsubject);
-		this.prevsubject.subscribe(
-			pc => {this.previouscraft = pc;},
-			e => console.log('onError: ' + e.message),
-    		() => console.log('onCompleted')
-		);
-
-		this._craftService.getCraft(nextid).subscribe(this.nextsubject);
-		this.nextsubject.subscribe(
-			nc => {this.nextcraft = nc;},
-			e => console.log('onError: ' + e.message),
-    		() => console.log('onCompleted')
-		);
+		this.subject = new ReplaySubject<Craft[]>();
+		/*this.prevsubject = new ReplaySubject<Craft>();
+		this.nextsubject = new ReplaySubject<Craft>();*/
+		this.goGetEm();
+		
 	}
-	
-	goToCrafts() {
-  		this._router.navigate(['Crafts']);
-	}
-	
-	goToDetail(idpass) { 
-		let id = +this._routeParams.get('id');
-		//check if next exists, backwards
-		if (idpass<id){
-			if (!this.previouscraft || this.previouscraft.wip){
-				//do nothing
-			}else{
-				this._router.navigate(['CraftDetail', { id: idpass }]);
-			}
-		}else{
-			this._router.navigate(['CraftDetail', { id: idpass }]);
+
+	ngDoCheck() {
+		if (this.craft && (this.craft.id != this.id)){
+			this.goGetEm();
 		}
 	}
 
-	ngOnDestroy(){
-		this.subject.unsubscribe();
-		this.prevsubject.unsubscribe();
-		this.nextsubject.unsubscribe();
-		this.imagenum = 1;
+	ngOnDestroy() {
+		//console.log("in onDestroy",this.craft)
+		this.unsub();
 	}
 
-	/*
-	goToContact() {
-  		this._router.navigate(['Contact']);
-	}*/
+	unsub() {
+		//console.log("in unsub",this.craft)
+		this.subject.unsubscribe();
+		this.craft = null;
+		this.previouscraft = null;
+		this.nextcraft = null;
+		/*this.prevsubject.unsubscribe();
+		this.nextsubject.unsubscribe();
+		this.imagenum = 1;*/
+		//console.log("after unsub",this.craft)
+	}
+
+	goGetEm() {
+		this.route.params.subscribe((params: Params) => {
+
+			this.id = +params['id'];
+			this.previousid = this.id - 1;
+			this.nextid = this.id + 1;
+			console.log("goGetEm previd:",this.previousid,"id: ",this.id,"nextid: ",this.nextid);
+
+			this.previouscraft = null;
+			this.nextcraft = null;
+
+			this.craftService.getCrafts(this.nextid, this.previousid).subscribe(this.subject);
+			this.subject.subscribe(
+				cs => cs.forEach(
+					c => {
+						if (c.id == this.id){
+							this.craft = c;
+							console.log("checked craft id " + c.id,c);
+						}
+						if (c.id == this.previousid){
+							this.previouscraft = c;
+							console.log("checked prev id " + c.id,c);
+						}
+						if (c.id == this.nextid){
+							this.nextcraft = c;
+							console.log("checked next id " + c.id,c);
+						}
+					}
+				),
+				e => console.log('onError: ' + e.message),
+				() => console.log('onCompleted')
+			);
+
+			console.log("nextcraft? ",this.nextcraft,"previouscraft? ",this.previouscraft)
+
+			/*
+			this.craftService.getCraft(this.previousid).subscribe(this.prevsubject);
+			this.prevsubject.subscribe(
+				pc => {this.previouscraft = pc;},
+				e => console.log('onError: ' + e.message),
+				() => console.log('onCompleted')
+			);
+
+			this.craftService.getCraft(this.nextid).subscribe(this.nextsubject);
+			this.nextsubject.subscribe(
+				nc => {this.nextcraft = nc;},
+				e => console.log('onError: ' + e.message),
+				() => console.log('onCompleted')
+			);
+			*/
+		});
+	}
+
+	goToCrafts() {
+  		this.router.navigate(['/crafts']);
+	}
+
+	goToDetail(idpass) { 
+		this.router.navigate(['/detail', idpass ]);
+	}
 }

@@ -1,0 +1,26 @@
+<div *ngIf="craft" class="container">
+	<div class="row titlerow">
+		<h1>{{craft.name}}</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-8">
+			<p [innerHTML]="craft.description"></p>
+		</div>
+		<div class="col-xs-4" style="padding-bottom:1em;">
+			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
+			<span class="pull-xs-right">
+				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)"><</button>
+				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)">></button>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block"/>
+		</div>
+	</div>
+	<div class="row" style="padding:1em;">
+	<a routerLink="/crafts">Back to portfolio</a>
+	</div>
+	
+</div>

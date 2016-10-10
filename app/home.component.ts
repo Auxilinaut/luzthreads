@@ -1,24 +1,40 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
+
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
-import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 import {ReplaySubject} from 'rxjs/replaysubject';
 
 @Component({
-  selector: 'home',
-  directives: [ROUTER_DIRECTIVES, CAROUSEL_DIRECTIVES],
-  templateUrl: 'home.component.html'
+	moduleId: module.id,
+	selector: 'home',
+	templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit, OnDestroy {
-	crafts: Craft[] = [];
-	subject: ReplaySubject<Craft[]>;
-	constructor(private _router: Router, private _craftService: CraftService) { }
+	private crafts: Craft[] = [];
+	private subject: ReplaySubject<Craft[]>;
+	constructor(
+		private router: Router,
+		private craftService: CraftService
+	) { }
 	ngOnInit() {
 		this.subject = new ReplaySubject<Craft[]>();
-		this._craftService.getCrafts().subscribe(this.subject);
-		this.subject.subscribe(crafts => this.crafts = crafts.slice(Math.max(crafts.length - 3, 1)).reverse());
+		this.craftService.getCrafts().subscribe(this.subject);
+		this.subject.subscribe(
+			crafts => this.crafts = crafts.slice(Math.max(crafts.length - 3, 1)).reverse()
+		);
 		this.initInstafeed();
+	}
+	ngOnDestroy(){
+		this.subject.unsubscribe();
+	}
+	gotoDetail(craft: Craft){
+		let link = ['/detail', craft.id ];
+		this.router.navigate(link);
+	}
+	goToCrafts(){
+		let link = ['/crafts'];
+		this.router.navigate(link);
 	}
 	initInstafeed(){
 		var Instafeed = require("instafeed");
@@ -31,16 +47,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 			template: '<a href="{{link}}"><img src="{{image}}"/></a>'
 		});
 		feed.run();
-	}
-	gotoDetail(craft: Craft){
-		let link = ['CraftDetail', { id: craft.id }];
-		this._router.navigate(link);
-	}
-	goToCrafts(){
-		let link = ['Crafts'];
-		this._router.navigate(link);
-	}
-	ngOnDestroy(){
-		this.subject.unsubscribe();
 	}
 }

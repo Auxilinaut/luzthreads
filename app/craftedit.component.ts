@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
+
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
 import {ReplaySubject} from 'rxjs/replaysubject';
 
 @Component({
+	moduleId: module.id,
     selector: 'craftedit',
     templateUrl: 'craftedit.component.html',
 	inputs: ['changeRate','craftsLeft']
@@ -15,11 +17,14 @@ export class CraftEditComponent implements OnInit{
 	crafts: Craft[] = [];
 	private subject: ReplaySubject<Craft[]>;
 	
-	constructor(private _router: Router, private _craftService: CraftService) {}
+	constructor(
+		private router: Router, 
+		private craftService: CraftService
+	) {}
 
 	ngOnInit(){
 		this.subject = new ReplaySubject<Craft[]>();
-		this._craftService
+		this.craftService
 			.getCrafts()
 			.subscribe(
 				this.subject
@@ -34,6 +39,6 @@ export class CraftEditComponent implements OnInit{
 			//this.subject.add()
 	}
 	goToDetail(idpass) {
-		this._router.navigate(['CraftDetail', { id: idpass }]);
+		this.router.navigate(['detail', idpass ]);
 	}
 }
