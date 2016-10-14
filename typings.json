@@ -5,9 +5,5 @@
   "files": [
     "node_modules/angularfire2/index.d.ts",
     "node_modules/firebase/firebase.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
   ]
 }

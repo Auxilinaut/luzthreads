@@ -25,7 +25,7 @@ export const firebaseConfig = {
 
 @NgModule({
   imports: [ 
-    NgbModule, 
+    NgbModule.forRoot(), 
     BrowserModule, 
     AngularFireModule.initializeApp(firebaseConfig) ,
     routing

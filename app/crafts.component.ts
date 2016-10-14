@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
-import {ReplaySubject} from 'rxjs/replaysubject';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 @Component({
 	moduleId: module.id,

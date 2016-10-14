@@ -92,8 +92,26 @@ a {
 }
 
 .carousel {
-	max-width:400px;
   cursor: pointer;
+  max-width:400px;
+  outline:none;
+}
+
+.custom-carousel {
+  max-width:100%;
+  cursor: default;
+}
+
+.custom-carousel img{
+  max-height: 75vh;
+}
+
+.custom-carousel a{
+ display:none;
+}
+
+.carousel-hide-ol ol {
+ display:none;
 }
 
 .mascotprofile {

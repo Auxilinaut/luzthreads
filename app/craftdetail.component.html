@@ -10,13 +10,26 @@
 			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
 			<span class="pull-xs-right">
 				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)"><</button>
-				<button class="btn" *ngIf="previouscraft" (click)="goToDetail(craft.id-1)">></button>
+				<button class="btn" *ngIf="previouscraft && !previouscraft.wip" (click)="goToDetail(craft.id-1)">></button>
 			</span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<img src="{{craft.image1}}" class="imgdetail img-rounded img-fluid center-block"/>
+		<ngb-carousel class="custom-carousel" [class.carousel-hide-ol]="!craft.image2">
+			<template ngbSlide>
+				<img src="{{craft.image1}}" class="center-block" alt="{{craft.name}}"/>
+			</template>
+			<template *ngIf="craft.image2" ngbSlide>
+				<img src="{{craft.image2}}" class="center-block" alt="{{craft.name}}"/>
+			</template>
+			<template *ngIf="craft.image3" ngbSlide>
+				<img src="{{craft.image3}}" class="center-block" alt="{{craft.name}}"/>
+			</template>
+			<template *ngIf="craft.image4" ngbSlide>
+				<img src="{{craft.image4}}" class="center-block" alt="{{craft.name}}"/>
+			</template>
+		</ngb-carousel>
 		</div>
 	</div>
 	<div class="row" style="padding:1em;">

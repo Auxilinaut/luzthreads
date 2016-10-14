@@ -1,9 +1,8 @@
 import {Component, Injectable} from '@angular/core';
 import {Craft} from './craft'
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toarray';
 
 @Injectable()
 
@@ -18,7 +17,7 @@ export class CraftService {
   	}
 	getCrafts(startIndex?: number, endIndex?:number): Observable<Craft[]>{
 		if (startIndex && endIndex){
-			return this.dbCrafts.map(crafts => crafts.filter(craft => craft.id < startIndex && craft.id >= endIndex));
+			return this.dbCrafts.map(crafts => crafts.filter(craft => craft.id <= startIndex && craft.id >= endIndex));
 		}else{
 			return this.dbCrafts.map(crafts => crafts);
 		}
