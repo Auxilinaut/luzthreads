@@ -1,8 +1,12 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+
+import { AuthModule } from './auth/auth.module';
+import { DashModule } from './dashboard/dashboard.module';
 
 import { CraftService } from './craft.service';
 import { routing } from './app.routing';
@@ -23,12 +27,20 @@ export const firebaseConfig = {
     messagingSenderId: "514201865914"
 };
 
+export const firebaseAuthConfig = {
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
+}
+
 @NgModule({
   imports: [ 
-    NgbModule.forRoot(), 
+    NgbModule, 
     BrowserModule, 
-    AngularFireModule.initializeApp(firebaseConfig) ,
-    routing
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    routing,
+    AuthModule,
+    DashModule,
+    CommonModule
   ],
   declarations: [ 
     AppComponent,

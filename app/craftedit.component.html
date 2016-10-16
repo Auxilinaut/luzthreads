@@ -1,8 +1,20 @@
 <div class="container">
-	<div class="row titlerow">
-		<h1>My Portfolio</h1>
-	</div>
-	<div class="row center-block">
-		<div class="col-sm-12"><template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></template></div>
+	<div class="row">
+		<div class="col-xs-12">
+			<span *ngIf="af.auth | async">
+				<a routerLink="/dashboard" class="button">Dashboard</a>
+				<a (click)="logout()" class="button small" title="Logout"><i class="step fi-power size-18"></i></a>
+			</span>
+			<span *ngIf="!(af.auth | async)">
+				<a class="button small" routerLink="/login">Login</a> 
+				<a class="button small" routerLink="/signup">Sign up</a>
+			</span>
+			<div class="row titlerow">
+				<h1>My Portfolio</h1>
+			</div>
+			<div class="row center-block">
+				<div class="col-sm-12"><template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></template></div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -8,6 +8,9 @@ import { AboutComponent } from './about.component';
 import { ContactComponent } from './contact.component';
 import { CraftEditComponent } from './craftedit.component';
 
+import { LoginComponent, SignupComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth-guard.service';
+
 const appRoutes: Routes = [
     {
         path: '',

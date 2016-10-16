@@ -1,35 +1,32 @@
 <div *ngIf="craft" class="container">
 	<div class="row titlerow">
-		<h1>{{craft.name}}</h1>
-	</div>
-	<div class="row">
-		<div class="col-xs-8">
+		<div class="col">
+			<h1>{{craft.name}}</h1>
 			<p [innerHTML]="craft.description"></p>
 		</div>
-		<div class="col-xs-4" style="padding-bottom:1em;">
-			<!--<a href="" class="pull-xs-right">Request a craft like this!</a>-->
-			<span class="pull-xs-right">
-				<button class="btn" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)"><</button>
-				<button class="btn" *ngIf="previouscraft && !previouscraft.wip" (click)="goToDetail(craft.id-1)">></button>
-			</span>
-		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
-		<ngb-carousel class="custom-carousel" [class.carousel-hide-ol]="!craft.image2">
-			<template ngbSlide>
-				<img src="{{craft.image1}}" class="center-block" alt="{{craft.name}}"/>
-			</template>
-			<template *ngIf="craft.image2" ngbSlide>
-				<img src="{{craft.image2}}" class="center-block" alt="{{craft.name}}"/>
-			</template>
-			<template *ngIf="craft.image3" ngbSlide>
-				<img src="{{craft.image3}}" class="center-block" alt="{{craft.name}}"/>
-			</template>
-			<template *ngIf="craft.image4" ngbSlide>
-				<img src="{{craft.image4}}" class="center-block" alt="{{craft.name}}"/>
-			</template>
-		</ngb-carousel>
+		<div class="col-xs-2">
+			<button class="btn btn-sm pull-xs-right" *ngIf="nextcraft" (click)="goToDetail(craft.id+1)"><</button>
+		</div>
+		<div class="col-xs-8">
+			<ngb-carousel class="custom-carousel" [class.carousel-hide-ol]="!craft.image2">
+				<template ngbSlide>
+					<img src="{{craft.image1}}" class="center-block" alt="{{craft.name}}"/>
+				</template>
+				<template *ngIf="craft.image2" ngbSlide>
+					<img src="{{craft.image2}}" class="center-block" alt="{{craft.name}}"/>
+				</template>
+				<template *ngIf="craft.image3" ngbSlide>
+					<img src="{{craft.image3}}" class="center-block" alt="{{craft.name}}"/>
+				</template>
+				<template *ngIf="craft.image4" ngbSlide>
+					<img src="{{craft.image4}}" class="center-block" alt="{{craft.name}}"/>
+				</template>
+			</ngb-carousel>
+		</div>
+		<div class="col-xs-2">
+			<button class="btn btn-sm pull-xs-left" *ngIf="previouscraft && !previouscraft.wip" (click)="goToDetail(craft.id-1)">></button>
 		</div>
 	</div>
 	<div class="row" style="padding:1em;">

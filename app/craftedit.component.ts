@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { AngularFire } from 'angularfire2'
 
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
@@ -18,6 +19,7 @@ export class CraftEditComponent implements OnInit{
 	private subject: ReplaySubject<Craft[]>;
 	
 	constructor(
+		private af: AngularFire,
 		private router: Router, 
 		private craftService: CraftService
 	) {}
