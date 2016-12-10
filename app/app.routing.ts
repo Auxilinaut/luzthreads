@@ -39,6 +39,7 @@ const appRoutes: Routes = [
 	},
 	{
 		path: 'craftedit',
+		canActivate: [AuthGuard],
 		component: CraftEditComponent
 	}
 ];

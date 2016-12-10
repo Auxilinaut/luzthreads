@@ -1,27 +1,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-            <div class="row">
-                <div class="small-12 medium-6 medium-centered columns">
-                    <h5 class="callout text-center">
-                    Dashboard which only Logged in Can see this
-                    </h5>
-                </div>
-                <div class="small-12 columns">
-                    <div class="menu-centered">
-                        <ul class="menu">
-                            <li>Dashboard</li>
-                            <li><a routerLink="/dashboard/profile">Profile</a></li>
-                            <li><a routerLink="/dashboard/account">Account</a></li>
-                            <li><a routerLink="/dashboard/settings">Settings</a></li>
-                        </ul>
-                    </div>
-                    <hr>
-                </div>
+            <h5 class="text-center">
+            Dashboard
+            </h5>
+            <div class="text-center">
+                <ul class="menu">
+                    <li>Dashboard</li>
+                    <li><a routerLink="/dashboard/profile">Profile</a></li>
+                    <li><a routerLink="/dashboard/account">Account</a></li>
+                    <li><a routerLink="/dashboard/settings">Settings</a></li>
+                </ul>
             </div>
-            <div class="row">
-                <router-outlet></router-outlet>
-            </div>
+            <router-outlet></router-outlet>
 		</div>
 	</div>
 </div>

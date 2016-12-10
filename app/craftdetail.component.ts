@@ -68,7 +68,7 @@ export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 
 			this.craftService.getCrafts(this.nextid, this.previousid).subscribe(this.subject);
 			this.subject.subscribe(
-				cs => cs.forEach(
+				cs => cs.filter(
 					c => {
 						if (c.id == this.id){
 							this.craft = c;
@@ -84,6 +84,7 @@ export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 				e => console.log('onError: ' + e.message),
 				() => console.log('onCompleted')
 			);
+
 		});
 	}
 

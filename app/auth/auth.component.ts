@@ -4,36 +4,6 @@ import { Router } from '@angular/router';
 import { AngularFire, FirebaseApp } from 'angularfire2';
 
 @Component({
-  templateUrl: 'app/auth/signup.component.html'
-})
-
-export class SignupComponent {
-  public error: any;
-
-  constructor(private af: AngularFire, private router: Router) {  }
-
-  onSubmit(formData) {
-    if(formData.valid) {
-      console.log(formData.value);
-      this.af.auth.createUser({
-        email: formData.value.email,
-        password: formData.value.password
-      }).then(
-        (success) => {
-        console.log(success);
-        this.router.navigate(['/login'])
-      }).catch(
-        (err) => {
-        console.log(err);
-        this.router.navigate(['/login']);
-      })
-    } else {
-      this.error = 'Your form is invalid';
-    }
-  }
-}
-
-@Component({
   templateUrl: 'app/auth/login.component.html'
 })
 
@@ -44,7 +14,6 @@ export class LoginComponent {
 
   onSubmit(formData) {
     if(formData.valid) {
-      console.log(formData.value);
       this.af.auth.login({
         email: formData.value.email,
         password: formData.value.password
@@ -61,6 +30,14 @@ export class LoginComponent {
       this.error = 'Your form is invalid';
     }
   }
+}
+
+@Component({
+  template: '<div class="container"><p>Sorry, no signups allowed</p></div>'
+})
+
+export class SignupComponent {
+
 }
 
 @Component({

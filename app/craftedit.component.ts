@@ -43,4 +43,7 @@ export class CraftEditComponent implements OnInit{
 	goToDetail(idpass) {
 		this.router.navigate(['detail', idpass ]);
 	}
+	logout(){
+		this.af.auth.logout();
+	}
 }

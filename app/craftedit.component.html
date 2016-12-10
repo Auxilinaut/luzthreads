@@ -3,11 +3,10 @@
 		<div class="col-xs-12">
 			<span *ngIf="af.auth | async">
 				<a routerLink="/dashboard" class="button">Dashboard</a>
-				<a (click)="logout()" class="button small" title="Logout"><i class="step fi-power size-18"></i></a>
+				<a (click)="logout()" class="btn btn-sm" title="Logout">Logout</a>
 			</span>
 			<span *ngIf="!(af.auth | async)">
-				<a class="button small" routerLink="/login">Login</a> 
-				<a class="button small" routerLink="/signup">Sign up</a>
+				<a class="btn btn-sm" routerLink="/login">Login</a> 
 			</span>
 			<div class="row titlerow">
 				<h1>My Portfolio</h1>
