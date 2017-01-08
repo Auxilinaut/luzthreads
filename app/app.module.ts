@@ -8,6 +8,8 @@ import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { AuthModule } from './auth/auth.module';
 import { DashModule } from './dashboard/dashboard.module';
 
+import { Ng2MapModule} from 'ng2-map';
+
 import { CraftService } from './craft.service';
 import { routing } from './app.routing';
 
@@ -33,7 +35,8 @@ export const firebaseAuthConfig = {
 }
 
 @NgModule({
-  imports: [ 
+  imports: [
+    Ng2MapModule,
     NgbModule, 
     BrowserModule, 
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),

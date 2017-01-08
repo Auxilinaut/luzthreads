@@ -28,7 +28,8 @@
       'instafeed':         'js/instafeed.min.js',
       'firebase': 'npm:firebase',
       'angularfire2': 'npm:angularfire2',
-      'traceur': 'npm:traceur'
+      'traceur': 'npm:traceur',
+      'ng2-map': 'node_modules/ng2-map/dist'
     },
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -41,8 +42,8 @@
         defaultExtension: 'js'
       },
       'angular-in-memory-web-api': {
-        main: './index.js',
-        defaultExtension: 'js'
+        defaultExtension: 'js',
+        main: './index.js'
       },
       'firebase': {
         defaultExtension: 'js',
@@ -55,6 +56,10 @@
       'traceur': {
         defaultExtension: 'js',
         main: './bin/traceur.js'
+      },
+      'ng2-map': {
+        defaultExtension: 'js',
+        main: 'ng2-map.umd.js'
       }
     }
   });
