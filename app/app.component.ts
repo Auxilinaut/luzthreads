@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'luzthreads',
   template: `
-	<nav class="navbar navbar-fixed-top navbar-dark">
+	<nav class="navbar navbar-dark">
 		<div class="container">
 			<a class="navbar-brand" routerLink="/home">Luz Threads</a>
 			<button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" (click)="isCollapsed = !isCollapsed">&#9776;</button>

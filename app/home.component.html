@@ -1,42 +1,67 @@
-<div id="topdiv" class="container">
-	<div class="row">
-		<div class="col-md-6">
-				<img src="img/mascot.png" class="hidden-sm-down center-block" style="height:450px;overflow:visible;margin-bottom:-110px;"/>
-				<img src="img/mascot.png" class="hidden-md-up center-block" style="height:320px;overflow:visible;margin-bottom:-50px;"/>
-		</div>
-		<div class="col-md-6">
-				<div class="row center-block" style="text-align:center;"><h1 class="center-block">Welcome!</h1><img src="img/luz.jpg" class="mascotprofile center-block"/>
-					<p class="center-block">My name is Luz. I crochet handcrafted toys, dolls, and other things. If you want to get someone a cool gift, I can make one for you!</p>
-					<a type="button" class="btn btn-primary text-center" routerLink="/about">About</a>
-					<a type="button" class="btn btn-primary text-center" routerLink="/contact">Contact</a>
-				</div>
+<div id="topdiv" class="masthead">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 hidden-md-up">
+				<h1 style="padding-top:0;">LUZ THREADS</h1>
+				<h2 class="lead">AWESOME HANDMADE <span class="serious">CRAFTS</span></h2>
+			</div>
+			<div class="col-md-6">
+					<img src="img/mascot.png" class="hidden-sm-down center-block" style="height:450px;overflow:visible;margin-bottom:-110px;"/>
+					<img src="img/mascot.png" class="hidden-md-up center-block" style="height:320px;overflow:visible;margin-bottom:-80px;"/>
+			</div>
+			<div class="col-md-6 hidden-sm-down">
+				<h1>LUZ THREADS</h1>
+				<h2 class="lead">AWESOME HANDMADE <span class="serious"><b>CRAFTS</b></span></h2>
+				<p> 
+			</div>
 		</div>
 	</div>
 </div>
-<div id="middlediv" class="parallaxbg parallaxbg-light">
+<div id="middlediv" class="parallaxbg parallaxbg-light py-3">
 	<div class="parallaxbg-in">
 		<p>Check out my craft collection!</p>
 		<a type="button" class="btn btn-primary btn-lg" routerLink="/crafts">Portfolio</a>
 	</div>
 </div>
-<div id="bottomdiv" class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<h3>Recent Projects</h3>
+<div class="featurette">
+	<div class="container">
+		<div class="row">
+			<h2 class="featurette-title">Welcome!</h2>
+			<div class="col-xs-12">
+				<img src="img/luz.jpg" class="mascotprofile center-block"/>
+				<p class="lead">My name is Luz. I crochet handcrafted toys, dolls, and other things. If you want to get someone a cool gift, I can make one for you!</p>
+				<a type="button" class="btn btn-primary" routerLink="/about">About</a>
+				<a type="button" class="btn btn-primary" routerLink="/contact">Contact</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="featurette alternate">
+	<div class="container">
+		<div class="row">
+			<h2 class="featurette-title">Recent Projects</h2>
+			<div class="col-xs-12">
 				<ngb-carousel>
 					<template ngFor let-craft [ngForOf]="crafts">
 						<template ngbSlide>
-						<img (click)="gotoDetail(craft)" src="{{craft.image6}}" alt="{{craft.name}}"/>
-						<div (click)="gotoDetail(craft)" class="carousel-caption">
-							<h3>{{craft.name}}</h3>
-						</div>
+							<img (click)="gotoDetail(craft)" src="{{craft.image6}}" alt="{{craft.name}}"/>
+							<div (click)="gotoDetail(craft)" class="carousel-caption">
+								<h3>{{craft.name}}</h3>
+							</div>
 						</template>
 					</template>
 				</ngb-carousel>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<h3>Instagram</h3>
+	</div>
+</div>
+<div class="featurette">
+	<div class="container">
+		<div class="row">
+			<h2 class="featurette-title">Instagram</h2>
+			<div class="col-xs-12">
 				<div id="instafeed"></div>
+			</div>
 		</div>
 	</div>
 </div>
