@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import { AngularFire } from 'angularfire2'
+import { AngularFireAuth } from 'angularfire2/auth'
+import { AngularFireDatabase } from 'angularfire2/database'
 
 import {Craft} from './craft';
 import {CraftService} from './craft.service';
@@ -19,7 +20,7 @@ export class CraftEditComponent implements OnInit{
 	private subject: ReplaySubject<Craft[]>;
 	
 	constructor(
-		private af: AngularFire,
+		private afAuth: AngularFireAuth,
 		private router: Router, 
 		private craftService: CraftService
 	) {}
@@ -44,6 +45,6 @@ export class CraftEditComponent implements OnInit{
 		this.router.navigate(['detail', idpass ]);
 	}
 	logout(){
-		this.af.auth.logout();
+		this.afAuth.auth.signOut();
 	}
 }

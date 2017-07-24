@@ -1,6 +1,6 @@
 <div class="alternate">
 	<div class="container" style="text-align: center;">
-		<div class="row p-y-1">
+		<div class="row py-2">
 			<div class="col-xs-12">
 				<h1 class="text-center">My Portfolio</h1>
 			</div>
@@ -10,7 +10,7 @@
 <div class="featurette">
 	<div class="container-fluid" style="text-align: center;">
 		<div class="row">
-			<div class="col-sm-12"><template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer" (click)="goToDetail(craft.id)"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></template></div>
+			<div class="col-sm-12"><ng-template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer" (click)="goToDetail(craft.id)"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="{{craft.image6}}" class="img-fluid"/></div></ng-template></div>
 		</div>
 		<div *ngIf="craftsLeft" class="row" style="padding-top:1em;">
 			<button class="btn btn-default" (click)="addCrafts(changeRate)">Load More</button>

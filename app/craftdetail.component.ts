@@ -5,13 +5,12 @@ import {Craft} from './craft';
 import {CraftService} from './craft.service';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
 	moduleId: module.id,
 	selector: 'craftdetail',
-	templateUrl: 'craftdetail.component.html',
-	providers: [NgbCarouselConfig]
+	templateUrl: 'craftdetail.component.html'
 })
 
 export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
@@ -28,10 +27,7 @@ export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 	constructor(
 		private router: Router,
 		private route: ActivatedRoute,
-		private craftService: CraftService,
-		private config: NgbCarouselConfig){ 
-			config.interval = 3000;
-		}
+		private craftService: CraftService){ }
 		
 	ngOnInit() {
 		this.subject = new ReplaySubject<Craft[]>();
@@ -59,6 +55,7 @@ export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 		this.route.params.subscribe((params: Params) => {
 
 			this.id = +params['id'];
+			console.log("id " + this.id);
 			this.previousid = this.id - 1;
 			this.nextid = this.id + 1;
 			let count = 0;
@@ -86,10 +83,6 @@ export class CraftDetailComponent implements OnInit, DoCheck, OnDestroy{
 			);
 
 		});
-	}
-
-	goToCrafts() {
-  		this.router.navigate(['/crafts']);
 	}
 
 	goToDetail(idpass) { 

@@ -1,5 +1,12 @@
 (function(global) {
   System.config({
+    transpiler: 'typescript',
+    //typescript compiler options
+    typescriptOptions: {
+      experimentalDecorators: true,
+      typeCheck: true
+    },
+
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/'
@@ -10,6 +17,7 @@
       app: 'app',
 
       // angular bundles
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -21,6 +29,7 @@
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
 
       // other libraries
+      'typescript': 'npm:typescript',
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
       'moment':					  'npm:moment/moment.js',
@@ -29,7 +38,7 @@
       'firebase': 'npm:firebase',
       'angularfire2': 'npm:angularfire2',
       'traceur': 'npm:traceur',
-      'ng2-map': 'node_modules/ng2-map/dist'
+      'ng2-map': 'npm:ng2-map/dist'
     },
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -37,6 +46,14 @@
       app: {
         main: './main.js',
         defaultExtension: 'js'
+      },
+      typescript: {
+        "main": "lib/typescript.js",
+        "meta": {
+          "lib/typescript.js": {
+            "exports": "ts"
+          }
+        }
       },
       rxjs: {
         defaultExtension: 'js'

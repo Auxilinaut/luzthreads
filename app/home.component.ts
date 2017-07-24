@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {Craft} from './craft';
@@ -10,13 +10,17 @@ import {ReplaySubject} from 'rxjs/ReplaySubject';
 	selector: 'home',
 	templateUrl: 'home.component.html'
 })
+
 export class HomeComponent implements OnInit, OnDestroy {
+
 	private crafts: Craft[] = [];
 	private subject: ReplaySubject<Craft[]>;
+
 	constructor(
 		private router: Router,
 		private craftService: CraftService
 	) { }
+
 	ngOnInit() {
 		this.subject = new ReplaySubject<Craft[]>();
 		this.craftService.getCrafts().subscribe(this.subject);
@@ -25,17 +29,21 @@ export class HomeComponent implements OnInit, OnDestroy {
 		);
 		this.initInstafeed();
 	}
+
 	ngOnDestroy(){
 		this.subject.unsubscribe();
 	}
+
 	gotoDetail(craft: Craft){
 		let link = ['/detail', craft.id ];
 		this.router.navigate(link);
 	}
+
 	goToCrafts(){
 		let link = ['/crafts'];
 		this.router.navigate(link);
 	}
+
 	initInstafeed(){
 		var Instafeed = require("instafeed");
 		var feed = new Instafeed({
@@ -48,4 +56,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 		});
 		feed.run();
 	}
+
 }
