@@ -1,8 +1,0 @@
-img/Thumbs.db
-node_modules/
-dist/
-.vscode/
-data.json
-typings/
-app/*/*.js
-app/*.map
