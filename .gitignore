@@ -4,7 +4,9 @@ dist/
 .vscode/
 data.json
 typings/
+app/*.js
 app/*/*.js
+app/*.map
 app/*/*.map
 css/*.map
 startdev.bat

@@ -102,7 +102,20 @@ footer {
 }
 
 .mascotprofile {
-    padding-bottom: 1.5em;
+    max-height: 20em;
+    text-align: right!important;
+}
+
+@media (min-width: 576px) {
+  .story {
+    font-size: 1.25em;
+    text-align: left!important;
+  }
+}
+
+.story {
+    font-size: 1.25em;
+    text-align: center;
 }
 
 .profile {
@@ -121,7 +134,7 @@ footer {
 
 .parallaxbg {
   color: #fff;
-  padding: 6em 0;
+  padding: 9em 0;
   position: relative;
   text-align: center;
   background: url(../img/2-3.jpg) no-repeat center center fixed;
@@ -301,26 +314,23 @@ transition: 0.3s;
 }
 
 .masthead h1 {
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
-  padding-top:.6em;
+  padding-top: .6em;
 }
 
 .masthead .lead {
-  margin-right: auto;
-  margin-left: auto;
+  /*margin-right: auto;
+  margin-left: auto;*/
   font-size: 1.25rem;
-}
-
-.masthead .version {
-  margin-top: -1rem;
+  font-weight: 400;
 }
 
 .masthead .btn {
   width: 100%;
   padding: 1rem 2rem;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (min-width: 576px) {
@@ -353,7 +363,7 @@ transition: 0.3s;
 /*featurette*/
 
 .featurette {
-  padding-top: 3rem;
+  padding-top: 1.5rem;
   padding-bottom: 3rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -367,13 +377,13 @@ transition: 0.3s;
 }
 
 .featurette .lead {
-  margin-right: auto;
   margin-bottom: 2rem;
-  margin-left: auto;
-  text-align: center;
 }
 
 @media (min-width: 768px) {
+  .featurette {
+    padding-top: 3rem;
+  }
   .featurette .col-sm-6:first-child {
     padding-right: 45px;
   }

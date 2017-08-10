@@ -23,38 +23,48 @@
 		<a type="button" class="btn btn-primary btn-lg" routerLink="/crafts">Portfolio</a>
 	</div>
 </div>
-<div class="featurette">
+<div class="featurette" style="text-align: inherit;">
 	<div class="container">
-		<div class="row">
-			<h2 class="featurette-title">Welcome!</h2>
-			<div class="col-xs-12">
-				<img src="img/luz.jpg" class="mascotprofile center-block"/>
-				<p class="lead">My name is Luz. I make handcrafted toys, dolls, and other things. Almost every day, I am crocheting something. </p>
+		<h2 class="featurette-title">About Me</h2>
+		<div class="row hidden-xs-down">
+			<div class="col-sm-6" style="text-align: right;">
+				<img src="img/luz.jpg" class="mascotprofile img-thumbnail"/>
+			</div>
+			<div class="col-sm-6" style="text-align: left;">
+				<p class="story">My name is Luz Camacho.<br/>I make handcrafted toys.<br/>I crochet something almost every day!</p>
 				<a type="button" class="btn btn-primary" routerLink="/about">About</a>
-				<a type="button" class="btn btn-primary" routerLink="/contact">Contact</a>
+			</div>
+		</div>
+		<div class="row hidden-sm-up">
+			<div class="col-sm-6" style="text-align: center;">
+				<img src="img/luz.jpg" class="mascotprofile img-thumbnail"/>
+			</div>
+			<div class="col-sm-6" style="text-align: center;">
+				<p>My name is Luz Camacho.<br/>I make handcrafted toys.<br/>I crochet something almost every day!</p>
+				<a type="button" class="btn btn-primary" routerLink="/about">About</a>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="featurette alternate">
 	<div class="container">
+		<h2 class="featurette-title">Featured Projects</h2>
 		<div class="row">
-			<h2 class="featurette-title">Recent Projects</h2>
-			<div class="col-xs-12">
-					<ngb-carousel class="custom-carousel">
-						<ng-template ngbSlide *ngFor="let craft of crafts">
-							<img src="{{craft.image6}}" (click)="gotoDetail(craft)" class="center-block" alt="{{craft.name}}"/>
-						</ng-template>
-					</ngb-carousel>
+			<div class="col">
+				<ngb-carousel class="custom-carousel">
+					<ng-template ngbSlide *ngFor="let craft of crafts">
+						<img src="{{craft.image6}}" (click)="gotoDetail(craft)" class="center-block" alt="{{craft.name}}"/>
+					</ng-template>
+				</ngb-carousel>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="featurette">
 	<div class="container">
+		<h2 class="featurette-title">Instagram</h2>
 		<div class="row">
-			<h2 class="featurette-title">Instagram</h2>
-			<div class="col-xs-12">
+			<div class="col">
 				<div id="instafeed"></div>
 			</div>
 		</div>

@@ -28,7 +28,7 @@ import { Component } from '@angular/core';
 	<div id="toppad">
 		<router-outlet></router-outlet>
 	</div>
-	<footer class="footer"><div class="container">&copy; Luz Threads 2016 - <a href="mailto:Luz@LuzThreads.com">Luz@LuzThreads.com</a></div></footer>
+	<footer class="footer"><div class="container">&copy; Luz Threads 2017 - <a routerLink="/contact">Contact Me</a></div></footer>
   `
 })
 
