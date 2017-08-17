@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">Luz Threads</a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
+      <div class="navbar-nav navbar-dark px-2">
+        
+          <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active" (click)="isCollapsed = true">Home</a>
+        
+          <a class="nav-item nav-link" routerLink="/crafts" routerLinkActive="active" (click)="isCollapsed = true">Portfolio</a>
+        
+          <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active" (click)="isCollapsed = true">About</a>
+        
+          <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active" (click)="isCollapsed = true">Contact</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="toppad">
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        &copy; Luz Threads 2017
+      </div>
+      <div class="col">
+        <span class="float-right">Website by <a href="http://www.combosoftware.com">Combo Software</a></span>
+      </div>
+    </div>
+  </div>
+</footer>

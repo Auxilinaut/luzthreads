@@ -1,0 +1,65 @@
+<div id="topdiv" class="masthead">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 d-md-none">
+				<h1 style="padding-top:0;">LUZ THREADS</h1>
+				<h2 class="lead">AWESOME HANDMADE <span class="serious"><a routerLink="/crafts"><b>CRAFTS</b></a></span></h2>
+			</div>
+			<div class="col-md-6">
+					<img src="../../assets/img/mascot.png" class="d-none d-md-block center-block" style="height:450px;overflow:visible;margin-bottom:-110px;"/>
+					<img src="../../assets/img/mascot.png" class="d-md-none center-block" style="height:320px;overflow:visible;margin-bottom:-78px;"/>
+			</div>
+			<div class="col-md-6 d-none d-md-block">
+				<h1>LUZ THREADS</h1>
+				<h2 class="lead">AWESOME HANDMADE <span class="serious"><a routerLink="/crafts"><b>CRAFTS</b></a></span></h2>
+				<p> 
+			</div>
+		</div>
+	</div>
+</div>
+<div id="middlediv" class="parallaxbg parallaxbg-light">
+	<div class="parallaxbg-in">
+		<p>Check out my craft collection!</p>
+		<a type="button" class="btn btn-primary btn-lg" routerLink="/crafts">Portfolio</a>
+	</div>
+</div>
+<div class="featurette" style="text-align: inherit;">
+	<div class="container text-center">
+		<h2 class="featurette-title">About Me</h2>
+		<div class="row">
+			<div class="col">
+				<a routerLink="/about"><img src="../../assets/img/luz.jpg" class="mascotprofile img-thumbnail"/></a>
+      </div>
+		</div>
+    <div class="row">
+			<div class="col">
+				<p class="lead">My name is Luz Camacho.<br/>I make custom toys and dolls.<br/>I crochet something almost every day!</p>
+        <a type="button" class="btn btn-lg" routerLink="/about">About</a>
+      </div>
+    </div>
+	</div>
+</div>
+<div class="featurette alternate">
+	<div class="container">
+		<h2 class="featurette-title">Featured Crafts</h2>
+		<div class="row">
+			<div class="col">
+				<ngb-carousel class="custom-carousel">
+					<ng-template ngbSlide *ngFor="let craft of crafts">
+						  <img src="../../assets/{{craft.image6}}" (click)="gotoDetail(craft)" class="center-block rounded" alt="{{craft.name}}"/>
+          </ng-template>
+				</ngb-carousel>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="featurette">
+	<div class="container">
+		<h2 class="featurette-title">Instagram</h2>
+		<div class="row">
+			<div class="col">
+				<div id="instafeed"></div>
+			</div>
+		</div>
+	</div>
+</div>

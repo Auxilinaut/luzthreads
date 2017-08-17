@@ -1,9 +1,0 @@
-{
-  "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.0.0+20160725163759"
-  },
-  "files": [
-    "node_modules/angularfire2/index.d.ts",
-    "node_modules/firebase/firebase.d.ts"
-  ]
-}

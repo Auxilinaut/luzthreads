@@ -1,0 +1,31 @@
+<div *ngIf="craft">
+	<div class="featurette">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<ngb-carousel class="custom-carousel" [class.carousel-hide-ol]="!craft.image2">
+						<ng-template ngbSlide>
+							<img src="../../assets/{{craft.image1}}" class="center-block img-fluid rounded" alt="{{craft.name}}"/>
+						</ng-template>
+						<ng-template *ngIf="craft.image2" ngbSlide>
+							<img src="../../assets/{{craft.image2}}" class="center-block img-fluid rounded" alt="{{craft.name}}"/>
+						</ng-template>
+						<ng-template *ngIf="craft.image3" ngbSlide>
+							<img src="../../assets/{{craft.image3}}" class="center-block img-fluid rounded" alt="{{craft.name}}"/>
+						</ng-template>
+						<ng-template *ngIf="craft.image4" ngbSlide>
+							<img src="../../assets/{{craft.image4}}" class="center-block img-fluid rounded" alt="{{craft.name}}"/>
+						</ng-template>
+					</ngb-carousel>
+				</div>
+			</div>
+			<div class="row" style="padding:1em;">
+				<div class="col">
+          <h2>{{craft.name}}</h2>
+					<p [innerHTML]="craft.description"></p>
+					<a routerLink="/crafts">Back to portfolio</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+<div class="featurette">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col"><ng-template ngFor let-craft [ngForOf]="crafts"><div *ngIf="!craft.wip" class="projContainer" (click)="goToDetail(craft.slug)"><div class="projInfoContainer"><h4 [innerHTML]="craft.name"></h4></div><img src="../../assets/{{craft.image6}}" class="img-fluid"/></div></ng-template></div>
+		</div>
+	</div>
+</div>
