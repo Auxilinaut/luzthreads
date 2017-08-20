@@ -13,7 +13,7 @@ declare var require: any;
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  private crafts: Craft[] = [];
+  public crafts: Craft[] = [];
 	private subject: ReplaySubject<Craft[]>;
 
 	constructor(
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.subject.unsubscribe();
 	}
 
-  gotoDetail(craft: Craft){
+  goToDetail(craft: Craft){
 		let link = ['/crafts', craft.slug ];
 		this.router.navigate(link);
 	}
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 			clientId: 'f6245b3f500747e884f844f2108bb494',
 			accessToken: '2041333598.f6245b3.d07ed4dd11ef461abd6a31806cefe7dc',
 			limit: '4',
-			template: '<a href="{{link}}"><img src="{{image}}" class="img-fluid px-5 py-5"/></a>'
+			template: '<div class="col-md-3 d-inline"><a href="{{link}}"><img src="{{image}}" class="img-fluid px-2 py-2"/></a></div>'
 		});
 		feed.run();
 	}
