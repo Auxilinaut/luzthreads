@@ -26,8 +26,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subject = new ReplaySubject<Craft[]>();
 		this.craftService.getCrafts().subscribe(this.subject);
 		this.subject.subscribe(
-			crafts => this.crafts = crafts.slice(Math.max(crafts.length - 3, 1)).reverse()
-    );
+			cs => {
+				this.crafts = cs;
+				this.crafts = this.shuffle(this.crafts);
+				this.crafts = this.crafts.slice(Math.max(this.crafts.length - 3, 1));
+			}
+		);
     this.initInstafeed();
   }
 
@@ -51,6 +55,27 @@ export class HomeComponent implements OnInit, OnDestroy {
 			template: '<div class="col-md-3 d-inline"><a href="{{link}}"><img src="{{image}}" class="img-fluid px-2 py-2"/></a></div>'
 		});
 		feed.run();
+	}
+
+	shuffle(array) {
+
+  	var currentIndex = array.length, temporaryValue, randomIndex;
+
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+		}
+
+		return array;
+		
 	}
 
 }
