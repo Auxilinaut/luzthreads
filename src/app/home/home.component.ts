@@ -49,8 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		var feed = new Instafeed({
 			get: 'user',
 			userId: '2041333598',
-			clientId: 'f6245b3f500747e884f844f2108bb494',
-			accessToken: '2041333598.f6245b3.d07ed4dd11ef461abd6a31806cefe7dc',
+			clientId: 'dd86093f5e6246f187c588b5ad6c1753',
+			accessToken: '2041333598.dd86093.7b705edb38fa49fd8902bdf30e4231ef',
 			limit: '4',
 			template: '<div class="col-md-3 d-inline"><a href="{{link}}"><img src="{{image}}" class="img-fluid px-2 py-2"/></a></div>'
 		});
