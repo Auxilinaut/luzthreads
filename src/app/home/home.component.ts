@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 				this.crafts = this.crafts.slice(Math.max(this.crafts.length - 3, 1));
 			}
 		);
-    this.initInstafeed();
   }
 
   ngOnDestroy(){
@@ -42,19 +41,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   goToDetail(craft: Craft){
 		let link = ['/crafts', craft.slug ];
 		this.router.navigate(link);
-	}
-  
-  initInstafeed(){
-		var Instafeed = require("assets/js/instafeed.min.js");
-		var feed = new Instafeed({
-			get: 'user',
-			userId: '2041333598',
-			clientId: 'dd86093f5e6246f187c588b5ad6c1753',
-			accessToken: '2041333598.dd86093.7b705edb38fa49fd8902bdf30e4231ef',
-			limit: '4',
-			template: '<div class="col-md-3 d-inline"><a href="{{link}}"><img src="{{image}}" class="img-fluid px-2 py-2"/></a></div>'
-		});
-		feed.run();
 	}
 
 	shuffle(array) {
